@@ -1,6 +1,6 @@
 # SiteVirtutis
 Site high code - JavaScript
 
-Tecnologias a serem utilizadas: Javascript, frameworks (...), tba.
-Banco de dados: tbd
+Tecnologias a serem utilizadas: Javascript, frameworks (AWS...), tba.
 
+Banco de dados: tbd
