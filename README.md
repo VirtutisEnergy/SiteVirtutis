@@ -1,6 +1,5 @@
 # SiteVirtutis
-Site high code - JavaScript
+Site high code - JavaScript, Bootstrap
 
-Tecnologias a serem utilizadas: Javascript, frameworks (AWS...), tba.
 
-Banco de dados: tbd
+created at : 09.07.2024
