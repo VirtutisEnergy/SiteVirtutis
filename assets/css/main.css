@@ -2838,3 +2838,27 @@ section,
 #loom-companion-mv3 {
   display: none !important;
 }
+
+#result {
+  color: var(--default-color);
+  font-size: 1.2em;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+
+#monthlyBill{
+  border-radius: 10px;
+  height: 52.48px;
+
+}
+#monthlyBill:focus{
+  outline: none;
+  box-shadow: none;
+  border-color: var(--accent-color);
+
+}
+
+.bill{
+  align-items: center;
+}
