@@ -847,6 +847,11 @@ section,
     transform: scale(2) translateY(25%);
     
   }
+
+  .features-image,.about-img{
+    visibility: hidden;
+    min-height: 0% !important;
+  }
 }
 
 .hero .info p {
@@ -2882,3 +2887,26 @@ section,
 .bill{
   align-items: center;
 }
+
+.logo_zap i:hover{
+  color:#f4f7f6 ;
+  background-color: #02083b;
+}
+
+.result-box {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+/* Remove os spinners do input */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Remove o efeito azul ao clicar */
+#vitisInput:focus,#monthsInput:focus {
+  outline: none;
+  box-shadow: none;
+}
+

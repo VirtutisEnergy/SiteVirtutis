@@ -44,8 +44,8 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <!-- <li><a href="index.html" class="active">Home</a></li> -->
-          <li><a href="clients.html" class="active">Clientes</a></li>
-          <li><a href="services.html">Investidores</a></li>
+          <li><a href="clients.html">Clientes</a></li>
+          <li><a href="services.html" class="active">Investidores</a></li>
           <li><a href="about.html">Quem somos</a></li>
           
           
@@ -61,13 +61,13 @@
   <main class="main">
 
     <!-- Page Title -->
-    <div class="page-title dark-background" style="background-image: url(assets/img/hero-carousel/hero-carousel-1.jpg);">
+    <div class="page-title dark-background" style="background-image: url(assets/img/hero-carousel/hero-carousel-5.jpg);">
       <div class="container position-relative">
-        <h1>Cliente</h1>
+        <h1>Investidores</h1>
         <nav class="breadcrumbs">
           <ol>
             <li><a href="index.html" style="font-weight: 800;">Home</a></li>
-            <li class="current">Cliente</li>
+            <li class="current">Investidores</li>
           </ol>
         </nav>
       </div>
@@ -85,29 +85,45 @@
         <div class="row justify-content-around gy-4">
 
           <div class="col-lg-6 d-flex flex-column justify-content-center order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
-            <h3>Qual o valor médio que você costuma pagar em sua conta de energia?</h3>
+            <h3>Venha ser um Investidor Virtutis Energy</h3>
+
+            <h6>Faça aqui sua <strong>simulação</strong></h6>
             <p>
-              <div class="row justify-content-center mt-4">
-                <div class="col-md-8 d-flex align-items-center">
-                  <form id="investmentCalculator" class="form-inline w-100">
-                    <div class="input-group w-100 content bill">
-                      <input type="text" class="form-control" id="monthlyBill" placeholder="Digite o valor da conta">
-                      <div class="input-group-append ml-2 info">
-                        <button type="button" class="btn-get-started" onclick="calculateSavings()">Calcular</button>
-                      </div>
+                
+              <div class="container mt-5">
+                <div class="row justify-content-left">
+                    <div class="col-md-6">
+                        <div class="card-body text-left">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="result-box" id="vitisResult">R$ 0,00</div>
+                                    <div class="form-group">
+                                        <input type="number" class="form-control" id="vitisInput" placeholder="Qtde de Vitis">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="result-box" id="dateResult">__/__/____</div>
+                                    <div class="form-group">
+                                        <input type="number" class="form-control" id="monthsInput" placeholder="Qtde Meses">
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" id="calculateButton">Calcular</button>
+                            <div class="result-box mt-3" id="totalYield"><strong> Rendimento Acumulado: R$ 0,00</strong></div>
+                        </div>
                     </div>
-                    <div id="result" class="ml-3"></div>
-                  </form>
                 </div>
-              </div>
+            </div>
+
+            
             </p>
+          <h6> <strong>*</strong> Esta simulação assume que até o final de 2024, a usina estará no nível 0 e, a partir de 2025, atingirá o nível 3. </h6>
 
             <div class="row">
-
               <div class="col-lg-6 icon-box d-flex">
                 <i class="bi bi-coin flex-shrink-0"></i>
                 <div>
-                  <h4>Redução dos gastos</h4>
+                  <h4>Rentabilidade de até 2,10%</h4>
                   <p>Redução dos gastos com Energia Elétrica, a partir da compra dos créditos gerados pela Usina.</p>
                 </div>
               </div><!-- End Icon Box -->
@@ -115,7 +131,7 @@
               <div class="col-lg-6 icon-box d-flex">
                 <i class="bi bi-bank flex-shrink-0"></i>
                 <div>
-                  <h4>Sem Burocracia</h4>
+                  <h4>Ao menos 20 anos de Renda Passiva</h4>
                   <p>Nenhuma burocracia na construção de usinas próprias, toda a construção e jurisdição é responsabilidade da <strong>Virtutis Energy</strong>.</p>
                 </div>
               </div><!-- End Icon Box -->
@@ -123,7 +139,7 @@
               <div class="col-lg-6 icon-box d-flex">
                 <i class="bi bi-brightness-high flex-shrink-0"></i>
                 <div>
-                  <h4>Aluguel de Espaços</h4>
+                  <h4>Payback de 4,5 anos</h4>
                   <p>Explore locais alugados para implementar sistemas de geração de energia renovável, promovendo sustentabilidade e eficiência.</p>
                 </div>
               </div><!-- End Icon Box -->
@@ -131,17 +147,16 @@
               <div class="col-lg-6 icon-box d-flex">
                 <i class="bi bi-lightbulb flex-shrink-0"></i>
                 <div>
-                  <h4>Oportunidades em Locais Ideais</h4>
+                  <h4>Até 1.000 Vitis por Usina</h4>
                   <p>Descubra oportunidades em locais estratégicos alugados para construção de usinas, impulsionando a produção energética sustentável.</p>
                 </div>
               </div><!-- End Icon Box -->
-
             </div>
 
           </div>
 
           <div class="features-image col-lg-5 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="200">
-            <img src="assets/img/hero-carousel/hero-carousel-4.jpg" alt="">
+            <img src="assets/img/hero-carousel/hero-carousel-2.jpg" alt="">
           </div>
 
         </div>
@@ -154,55 +169,33 @@
 <section id="services" class="services section light-background">
   <div class="container">
     <div class="row gy-4">
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-        <div class="service-item position-relative">
-          <div class="icon">
-            <i class="fa-solid fa-coins"></i>
-          </div>
-          <h3>Economia de até 30%</h3>
-          <p>Ao optar pelas nossas usinas fotovoltaicas, você pode reduzir seus gastos com energia elétrica em até 30%, obtendo assim vantagens no uso da nossa energia solar.</p>
-        </div>
-      </div><!-- End Service Item -->
-
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-        <div class="service-item position-relative">
-          <div class="icon">
-            <i class="fa-solid fa-file-signature"></i>
-          </div>
-          <h3>Contratação Online</h3>
-          <p>Interessados em ser Clientes e Investidores precisam acessar o nosso <strong><a href="contact.html">formulário</a></strong> e assim, fazer o seu cadastro. O Nosso Setor Comercial entrará em contato para proceder com todo o funcionamento da usina e aquisição de Vitis.</p>
-        </div>
-      </div><!-- End Service Item -->
-
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-        <div class="service-item position-relative">
-          <div class="icon">
-            <i class="fa-solid fa-helmet-safety"></i>
-          </div>
-          <h3>Sem Obras</h3>
-          <p>Com a Virtutis Energy, garantimos a tranquilidade sem preocupações com obras ou instalações elétricas. Nossa Usina Fotovoltaica oferece condições ideais para investidores e clientes, atendendo a diversas demandas de energia com eficiência.</p>
-        </div>
-      </div><!-- End Service Item -->
+      
 
       <!-- Centralizando os dois últimos blocos -->
-      <div class="col-lg-6 col-md-6 mx-auto d-flex justify-content-center" data-aos="fade-up" data-aos-delay="400">
+      <div class="col-lg-6 col-md-6 mx-auto" data-aos="fade-up" data-aos-delay="400">
         <div class="service-item position-relative">
           <div class="icon">
-            <i class="fa-solid fa-handshake-slash"></i>
+            <i class="bi bi-currency-dollar flex-shrink-0"></i>
           </div>
-          <h3>Sem Fidelização</h3>
-          <p>Oferecemos liberdade total aos investidores da Virtutis Energy. Você pode retirar seu investimento nos Vitis a qualquer momento, sem a necessidade de esperar os 20 anos. Ao investir, você recebe bonificações, porém ao realizar a retirada, as bonificações são canceladas.</p>
+          <h3>Formas de Investimentos</h3>
+          <p>A nota comercial da Virtutis Energy é o Vitis que permite um rendimento de até  2,10% ao mês. Cada Vitis equivale a R$ 152,81 atualmente referente à usina VE.1 - 2023.01</p>
         </div>
       </div><!-- End Service Item -->
 
-      <div class="col-lg-6 col-md-6 mx-auto d-flex justify-content-center" data-aos="fade-up" data-aos-delay="500">
+      <div class="col-lg-6 col-md-6 mx-auto " data-aos="fade-up" data-aos-delay="500">
         <div class="service-item position-relative">
           <div class="icon">
-            <i class="fa-solid fa-gift"></i>
+            <i class="bi bi-graph-up-arrow flex-shrink-0"></i>
           </div>
-          <h3>Primeira mensalidade GRÁTIS</h3>
-          <p>Garantimos aos nossos clientes uma <strong>primeira mensalidade gratuita</strong>, sendo assim uma oportunidade perfeita para conhecer melhor nossos produtos e serviços.</p>
-        </div>
+          <h3>Níveis de Operação</h3>
+          <p><ul>
+            <li>Usina Nível 0 - Dividendo Mensal por Vitis de R$ 0,37</li>
+            <li>Usina Nível 1 - Dividendo mensal por Vitis de R$ 0,74</li>
+            <li>Usina Nível 2 - Dividendo mensal por Vitis de R$ 1,48</li>
+            <li>Usina Nível 3 - Dividendo mensal por Vitis de R$ 2,96</li>
+          </ul>
+        
+        </p>        </div>
       </div><!-- End Service Item -->
 
     </div><!-- End row -->
@@ -284,7 +277,7 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.6.0/cleave.min.js"></script>
-  <script src="assets/js/script.js"></script>
+  <script src="assets/js/script_vitis.js"></script>
 
 </body>
 
