@@ -10,9 +10,9 @@ var cleave = new Cleave('#monthlyBill', {
   function calcularEconomia(x) {
     // Converte o valor de x para número caso seja uma string
     x = Number(x);
+
+      economia = 30 - 30 * x * Math.exp(-x / 12);
     
-    // Calcula a economia usando a fórmula dada
-    const economia = 30 - 30 * x * Math.exp(-x / 12);
     
     // Retorna o valor economizado
     return economia;
@@ -31,7 +31,11 @@ var cleave = new Cleave('#monthlyBill', {
   
     // Calcular economia aleatória (por exemplo, entre 10% e 30% do valor da conta)
     const savingsPercentage = calcularEconomia(monthlyBillValue);
-    const savings = (monthlyBill * savingsPercentage / 100).toFixed(2);
+    var savings = (monthlyBill * savingsPercentage / 100).toFixed(2);
+
+    if (savings < 0){
+      savings = -1 *(Math.round(savings) * 0.3).toFixed(2)
+    }
   
     document.getElementById('result').innerHTML = `Economia de R$ ${savings} por mês!`;
   }
