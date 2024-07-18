@@ -7,14 +7,14 @@ var cleave = new Cleave('#monthlyBill', {
   });
 
 
-  function calcularEconomia(x) {
-    // Converte o valor de x para número caso seja uma string
-    x = Number(x);
+  function calcularEconomia(valorConta) {
+    const precoEnergia = 1.1; // R$/kWh (Preço da Energia)
+    const energiaGerada = 10000; // kWh (Energia Gerada pela Usina)
+    const maiorEconomiaPercentual = 30; // Maior economia percentual (%)
 
-      economia = 30 - 30 * x * Math.exp(-x / 12);
-    
-    
-    // Retorna o valor economizado
+    // Calcula a economia usando a fórmula fornecida
+    const economia = valorConta * (maiorEconomiaPercentual - maiorEconomiaPercentual * Math.exp(-(valorConta * 7 / (precoEnergia * energiaGerada)))) / 100;
+
     return economia;
 }
   
@@ -31,11 +31,11 @@ var cleave = new Cleave('#monthlyBill', {
   
     // Calcular economia aleatória (por exemplo, entre 10% e 30% do valor da conta)
     const savingsPercentage = calcularEconomia(monthlyBillValue);
-    var savings = (monthlyBill * savingsPercentage / 100).toFixed(2);
+    var savings = savingsPercentage.toFixed(2);
 
-    if (savings < 0){
-      savings = -1 *(Math.round(savings) * 0.3).toFixed(2)
-    }
+    // if (savings < 0){
+    //   savings = -1 *(Math.round(savings) * 0.3).toFixed(2)
+    // }
   
     document.getElementById('result').innerHTML = `Economia de R$ ${savings} por mês!`;
   }

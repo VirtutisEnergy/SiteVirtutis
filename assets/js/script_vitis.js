@@ -78,5 +78,5 @@ document.getElementById('calculateButton').addEventListener('click', function() 
       bonificacaoAcumulada += rendimentoMensal;
   }
 
-  document.getElementById('totalYield').innerText = `Bonificação Acumulada: R$ ${bonificacaoAcumulada.toFixed(2).replace('.', ',')}`;
+  document.getElementById('totalYield').innerText = `Rendimento Acumulada: R$ ${bonificacaoAcumulada.toFixed(2).replace('.', ',')}`;
 });

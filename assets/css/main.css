@@ -832,6 +832,16 @@ section,
 }
 @media (max-width: 500px) {
 
+  .header .logo img{
+    margin: 10px;
+  }
+
+  .footer .footer-about .logo{
+    /* padding: 5px; */
+    scale: 0.8;
+  }
+
+
   .block_letter{
     display: block;
   }
