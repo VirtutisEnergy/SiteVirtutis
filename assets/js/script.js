@@ -7,11 +7,15 @@ var cleave = new Cleave('#monthlyBill', {
   });
 
 
-  function calcularEconomia(gastoMes) {
-    const maxGasto = 6365.88;
-    const x = gastoMes / maxGasto; // Proporção direta do gasto mensal em relação ao máximo
-    const y = 0.30 * (1 - Math.exp(-5 * x)); // Ajuste para garantir que 100% do gasto corresponde a 30% de economia
-    return y;
+  function calcularEconomia(x) {
+    // Converte o valor de x para número caso seja uma string
+    x = Number(x);
+    
+    // Calcula a economia usando a fórmula dada
+    const economia = 30 - 30 * x * Math.exp(-x / 12);
+    
+    // Retorna o valor economizado
+    return economia;
 }
   
   function calculateSavings() {
