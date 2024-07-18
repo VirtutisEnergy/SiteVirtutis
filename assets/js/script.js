@@ -13,10 +13,15 @@ var cleave = new Cleave('#monthlyBill', {
     const precoEnergia = 1.1; // R$/kWh (Preço da Energia)
     const energiaGerada = 10000; // kWh (Energia Gerada pela Usina)
     const maiorEconomiaPercentual = 30; // Maior economia percentual (%)
-
+    var valor = String(valorConta)
+    valor = valor.replace('R$ ','')
+    
+    valor = parseFloat(valor)
+    console.log(valor)
     // Calcula a economia usando a fórmula fornecida
-    const economia = valorConta * (maiorEconomiaPercentual - maiorEconomiaPercentual * Math.exp(-(valorConta * 7 / (precoEnergia * energiaGerada)))) / 100;
+    const economia = valor * (maiorEconomiaPercentual - maiorEconomiaPercentual * Math.exp(-(valor * 7 / (precoEnergia * energiaGerada)))) / 100;
 
+    console.log(economia)
     return economia;
 }
   
