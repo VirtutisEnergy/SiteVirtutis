@@ -836,6 +836,18 @@ section,
     margin: 10px;
   }
 
+  .navbar_home{
+    visibility:visible !important;
+    /* width: 100px; */
+  }
+  
+  .navbar_about{
+    visibility:hidden;
+    width: 0;
+    height: 0;
+  }
+
+
   .footer .footer-about .logo{
     /* padding: 5px; */
     scale: 0.8;
@@ -847,6 +859,11 @@ section,
   }
 }
 
+
+.navbar_home{
+  visibility: hidden;
+  width: 0;
+}
 
 @media (max-width: 768px) {
   .hero .info h2 {
