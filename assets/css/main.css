@@ -830,6 +830,13 @@ section,
   bottom: 0;
   margin: auto;
 }
+@media (max-width: 500px) {
+
+  .block_letter{
+    display: block;
+  }
+}
+
 
 @media (max-width: 768px) {
   .hero .info h2 {
@@ -840,7 +847,7 @@ section,
   }
   #name-hero{
     color: var(--accent-color);
-    font-size: 40px;
+    font-size: 29px;
   }
 
   .hero .hero-image img{
