@@ -2901,7 +2901,7 @@ section,
 #result {
   color: var(--default-color);
   font-size: 1.2em;
-  white-space: nowrap;
+  /* white-space: nowrap; */
   font-weight: 500;
 }
 
