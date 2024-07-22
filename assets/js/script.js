@@ -44,6 +44,6 @@ var cleave = new Cleave('#monthlyBill', {
     //   savings = -1 *(Math.round(savings) * 0.3).toFixed(2)
     // }
   
-    document.getElementById('result').innerHTML = `Economia de aproximadamente R$ ${savings} por mês!`;
+    document.getElementById('result').innerHTML = `Economia de aproximadamente <div>R$ ${savings} por mês!</div>`;
   }
   
