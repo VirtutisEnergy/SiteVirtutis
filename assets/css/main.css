@@ -103,6 +103,7 @@ h6 {
   padding: 20px 0;
   transition: all 0.5s;
   z-index: 997;
+  height: 9%;
 }
 
 .header .logo img {
@@ -180,6 +181,7 @@ h6 {
     white-space: nowrap;
     transition: 0.3s;
     position: relative;
+    font-size: 16px;
     text-transform: uppercase;
   }
 
@@ -285,6 +287,9 @@ h6 {
     transition: color 0.3s;
   }
 
+  .header{
+         --background-color: rgba(255, 255, 255, 0);
+  }
   .navmenu {
     padding: 0;
     z-index: 9997;
@@ -317,6 +322,11 @@ h6 {
     justify-content: space-between;
     white-space: nowrap;
     transition: 0.3s;
+  }
+
+  .navmenu li{
+    width: fit-content;
+
   }
 
   .navmenu a i,
@@ -395,7 +405,10 @@ h6 {
   }
 
   .mobile-nav-active .navmenu>ul {
-    display: block;
+           display: flex;
+        flex-direction: column;
+        /* align-content: center; */
+        align-items: center;
   }
 }
 
@@ -841,7 +854,7 @@ section,
   }
 
   .hero .hero-image img{
-    transform: scale(2) translateY(15%);
+    transform: scale(2) translateY(5%);
     
   }
 
@@ -909,7 +922,7 @@ section,
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 35%; 
+  object-position: center 45%; 
 }
 
 /*--------------------------------------------------------------
@@ -2913,4 +2926,23 @@ input[type=number]::-webkit-inner-spin-button {
 
 #text-index{
  text-align: justify;
+}
+
+#contact{
+  background-color: #02083b;
+  border-radius: 2rem;
+  padding: 8px;
+}
+
+#contact a{
+  color: #f4f7f6;
+}
+
+#contact:hover{
+  background-color: #6289b4;
+  transition: 0.3s;
+}
+
+#contact>a:before{
+  visibility: hidden;
 }
