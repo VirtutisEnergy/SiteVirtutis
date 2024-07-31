@@ -95,7 +95,7 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  --background-color: rgba(255, 255, 255, 0);
+  /* --background-color: rgba(255, 255, 255, 0); */
   --default-color: #ffffff;
   --heading-color: #ffffff;
   color: var(--default-color);
@@ -197,7 +197,7 @@ h6 {
     height: 2px;
     bottom: -6px;
     left: 0;
-    background-color: var(--default-color);
+    background-color: var(--nav-dropdown-color);
     visibility: hidden;
     width: 0px;
     transition: all 0.3s ease-in-out 0s;
@@ -213,7 +213,7 @@ h6 {
   .navmenu li:hover>a,
   .navmenu .active,
   .navmenu .active:focus {
-    color: var(--nav-hover-color);
+    color: var(--accent-color);
   }
 
   .navmenu .dropdown ul {
@@ -747,7 +747,7 @@ section,
   position: relative;
   inset: 0;
   z-index: 3;
-  padding: 140px 0 60px 0;
+  padding: 140px 0 px 0;
 }
 
 @media (max-width: 768px),
@@ -2907,3 +2907,10 @@ input[type=number]::-webkit-inner-spin-button {
   box-shadow: none;
 }
 
+.container-xl{
+  max-width: 98% !important
+}
+
+#text-index{
+ text-align: justify;
+}
