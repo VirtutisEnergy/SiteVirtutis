@@ -279,7 +279,7 @@ h6 {
 /* Mobile Navigation */
 @media (max-width: 1199px) {
   .mobile-nav-toggle {
-    color: var(--nav-color);
+    color: var(--accent-color);
     font-size: 28px;
     line-height: 0;
     margin-right: 10px;
@@ -287,9 +287,6 @@ h6 {
     transition: color 0.3s;
   }
 
-  .header{
-         --background-color: rgba(255, 255, 255, 0);
-  }
   .navmenu {
     padding: 0;
     z-index: 9997;
@@ -809,7 +806,8 @@ section,
 @media (max-width: 500px) {
 
   .header .logo img{
-    margin: 10px;
+    /* margin: 10px; */
+    size: 0.5;
   }
 
   .navbar_home{
@@ -2928,21 +2926,21 @@ input[type=number]::-webkit-inner-spin-button {
  text-align: justify;
 }
 
-#contact{
+#contact-cad{
   background-color: #02083b;
   border-radius: 2rem;
   padding: 8px;
 }
 
-#contact a{
+#contact-cad a{
   color: #f4f7f6;
 }
 
-#contact:hover{
+#contact-cad:hover{
   background-color: #6289b4;
   transition: 0.3s;
 }
 
-#contact>a:before{
+#contact-cad>a:before{
   visibility: hidden;
 }
