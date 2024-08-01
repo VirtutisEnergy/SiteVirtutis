@@ -407,6 +407,19 @@ h6 {
         /* align-content: center; */
         align-items: center;
   }
+  #contact-cad{
+    background-color:#ffffff !important;
+    /* border-radius: 2rem; */
+    /* padding: 8px; */
+  }
+  
+  #contact-cad a{
+    color: var(--accent-color) !important;
+  }
+  
+  
+  
+
 }
 
 /*--------------------------------------------------------------
