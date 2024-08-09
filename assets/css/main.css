@@ -1123,6 +1123,12 @@ section,
   color: var(--accent-color);
 }
 
+@media (min-width: 992px) and (max-width: 1400px) {
+  .visible-01 {
+    display: none;
+  }
+}
+
 /*--------------------------------------------------------------
 # Alt Services Section
 --------------------------------------------------------------*/
