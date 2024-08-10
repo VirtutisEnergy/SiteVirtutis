@@ -81,7 +81,7 @@ document.getElementById('calculateButton').addEventListener('click', function() 
   document.getElementById('totalYield').innerText = `Rendimento Acumulada: R$ ${bonificacaoAcumulada.toFixed(2).replace('.', ',')}`;
 });
 
-window.addEventListener('resize', function(){ //função para alterar o placeholder para que caiba
+function resizeHandler() { //função para alterar o placeholder para que caiba
   const width = window.innerWidth;
   const inputFieldVitis = document.getElementById('vitisInput');
   const inputFieldMonths = document.getElementById('monthsInput');
@@ -93,6 +93,7 @@ window.addEventListener('resize', function(){ //função para alterar o placehol
     inputFieldVitis.placeholder = 'Qtde de Vitis';
     inputFieldMonths.placeholder = 'Qtde de Meses';
   }
-
-});
+}
+window.addEventListener('resize', resizeHandler); // Adicionar o evento de redimensionamento
+window.addEventListener('load', resizeHandler); // Adicionar o ajuste inicial
 
