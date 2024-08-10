@@ -95,3 +95,4 @@ window.addEventListener('resize', function(){ //função para alterar o placehol
   }
 
 });
+
