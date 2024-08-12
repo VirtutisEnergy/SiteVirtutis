@@ -95,7 +95,7 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  /* --background-color: rgba(255, 255, 255, 0); */
+  /*--background-color: rgba(255, 255, 255, 0); */
   --default-color: #ffffff;
   --heading-color: #ffffff;
   color: var(--default-color);
@@ -2696,12 +2696,17 @@ section,
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
 
+.setor-link {
+  margin-top: 2px;
+  font-size: 13px;
+}
+
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
-}
+/*.starter-section {
+  
+}*/
 
 /*--------------------------------------------------------------
 # Widgets
@@ -2956,4 +2961,23 @@ input[type=number]::-webkit-inner-spin-button {
 
 #contact-cad>a:before{
   visibility: hidden;
+}
+
+/*--------------------------------------------------------------
+# Departaments page
+--------------------------------------------------------------*/
+.header-02 {
+  border-bottom: 0.5px solid #02083b2d;
+} 
+
+.main-02 {
+  margin-top: 30px;
+}
+
+.item-02 {
+  padding: 100px;
+}
+
+.arrow {
+  font-size: 3rem;
 }
