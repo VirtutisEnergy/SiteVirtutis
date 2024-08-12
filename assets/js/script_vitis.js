@@ -32,7 +32,7 @@ const ipcaData = [
 ];
 document.getElementById('vitisInput').addEventListener('input', function() {
   const vitisValue = parseFloat(this.value);
-  const exchangeRate = 152.81; // Valor de 1 Vitis em R$
+  const exchangeRate = 175.24; // Valor de 1 Vitis em R$
   const result = vitisValue ? (vitisValue * exchangeRate).toFixed(2) : '0,00';
   document.getElementById('vitisResult').innerText = `R$ ${result.replace('.', ',')}`;
 });
@@ -67,10 +67,10 @@ document.getElementById('calculateButton').addEventListener('click', function() 
       const baseYield = ipcaEntry ? ipcaEntry.baseYield : 0;
 
       let rendimentoMensal;
-      if (year === 2024 && month >= 7) {
+      if (year === 2024 && month < 8) {
           rendimentoMensal = yieldBase * vitisValue;
-      } else if (year >= 2025) {
-          rendimentoMensal = baseYield * vitisValue * Math.pow(2, 3); // Nível 3 a partir de 2025
+      } else if (year === 2024 && month >= 8) {
+          rendimentoMensal = baseYield * vitisValue * Math.pow(2, 3); // Nível 3 a partir de agosto de 2024
       } else {
           rendimentoMensal = 0;
       }
@@ -78,7 +78,7 @@ document.getElementById('calculateButton').addEventListener('click', function() 
       bonificacaoAcumulada += rendimentoMensal;
   }
 
-  document.getElementById('totalYield').innerText = `Rendimento Acumulada: R$ ${bonificacaoAcumulada.toFixed(2).replace('.', ',')}`;
+  document.getElementById('totalYield').innerText = `Rendimento Acumulado: R$ ${bonificacaoAcumulada.toFixed(2).replace('.', ',')}`;
 });
 
 function resizeHandler() { //função para alterar o placeholder para que caiba
