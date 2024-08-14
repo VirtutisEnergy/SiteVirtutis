@@ -59,11 +59,11 @@ document.getElementById('calculateButton').addEventListener('click', function() 
   const yieldBase = 0.37; // Base Yield
 
   for (let i = 0; i < monthsValue; i++) {
-      const futureDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + i+1, currentDate.getDate());
+      const futureDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + i + 1, currentDate.getDate());
       const year = futureDate.getFullYear();
       const month = futureDate.getMonth() + 1;
 
-      const ipcaEntry = ipcaData.find(data => data.year === year-1);
+      const ipcaEntry = ipcaData.find(data => data.year === year);
       const baseYield = ipcaEntry ? ipcaEntry.baseYield : 0;
 
       let rendimentoMensal;
@@ -72,7 +72,7 @@ document.getElementById('calculateButton').addEventListener('click', function() 
       } else if (year === 2024 && month >= 8) {
           rendimentoMensal = baseYield * vitisValue * Math.pow(2, 3); // Nível 3 a partir de agosto de 2024
       } else {
-          rendimentoMensal = 0;
+          rendimentoMensal = baseYield * vitisValue;
       }
 
       bonificacaoAcumulada += rendimentoMensal;
