@@ -562,7 +562,6 @@ h6 {
 
 .logo-tec {
   width: 385px;
-  border-radius: 2em;
 }
 
 /*--------------------------------------------------------------
@@ -789,7 +788,7 @@ section,
 
 .hero-img {
   background-image: url('assets/img/ft1.jpg');
-  height: 50vh;
+  height: 25vh;
   width: 100%;
 }
 
