@@ -752,7 +752,7 @@ section,
 --------------------------------------------------------------*/
 .hero {
   width: 100%;
-  min-height: 40vh;
+  min-height: 100vh;
   position: relative;
   padding: 0;
   display: flex;
@@ -761,17 +761,9 @@ section,
   overflow: hidden;
 }
 
-/*.hero-02 {
-  min-height: 50vh;
-}*/
-
 #name-hero{
   color: var(--accent-color);
   font-size:56px;
-}
-
-.name-hero-02 {
-  font-family: var(--energy-font);
 }
 
 .text-hero{
@@ -784,12 +776,6 @@ section,
   inset: 0;
   z-index: 3;
   padding: 140px 0 px 0;
-}
-
-.hero-img {
-  background-image: url('assets/img/ft1.jpg');
-  height: 25vh;
-  width: 100%;
 }
 
 @media (max-width: 768px),
@@ -832,12 +818,8 @@ section,
 } */
 
 .subtext{
-   font-size: 31px;
+  /* font-size: 10px; */
   display: inline;
-}
-.subtext-color {
-  color: #6289b4;
-  background-color: #fff;
 }
 @media (max-width: 500px) {
 
