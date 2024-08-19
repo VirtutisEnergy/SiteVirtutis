@@ -25,12 +25,6 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-    <!-- Adicione o SDK do Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    
-
-
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
@@ -66,24 +60,27 @@
 
   <main class="main">
 
-    <section id="hero" class="hero section hero-02">
+  <!-- Hero Section -->
+<section id="hero" class="hero section dark-background">
 
-      <div class="info d-flex align-items-center">
-        <div class="container">
-          <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
-            <div class="col-lg-6 text-center pt-5">
-              <h2 class="name-hero-02"><strong id="name-hero">Virtutis Energy</strong></h2>
-              <h3 class="subtext subtext-color p-2">Gerando a Melhor Energia!</h3>
-              <p id="invisible-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              </p>
-              
-            </div>
-          </div>
+  <div class="info d-flex align-items-center">
+    <div class="container">
+      <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-lg-6 text-center">
+          <h2><strong id="name-hero">Virtutis Energy</strong></h2>
+          <h3 class="subtext">Gerando a Melhor Energia!</h3>
+          <p id="invisible-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <a href="contact.html" class="btn-get-started"> <div><strong>Abra sua conta</strong></div></a>
         </div>
       </div>
-    
-    </section><!-- /Hero Section -->
+    </div>
+  </div>
+
+  <div class="hero-image">
+    <img src="assets/img/hero-carousel/ft1.jpg" alt="Hero Image" class="img-fluid">
+  </div>
+
+</section><!-- /Hero Section -->
 
     <!-- Get Started Section -->
     <section id="get-started" class="get-started section">
@@ -91,18 +88,6 @@
       <div class="container">
 
         <div class="row justify-content-between gy-4">
-
-          <div class="col-lg-12 hero-img">
-            
-          </div>
-          
-          <div class="col-lg-12 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
-            <div class="content ">
-              <h3>Sobre a Virtutis Energy</h3>
-              <p id="text-index" class="fs-5">A Virtutis Energy é uma fintech de energia que desenvolve e gerencia usinas fotovoltaicas de microgeração distribuída, e proporciona a partir de sua locação, redução dos custos com eletricidade a seus clientes e dividendos mensais a seus investidores.
-              </p>
-            </div>
-          </div>
 
           <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
             <div class="content ">
@@ -114,9 +99,9 @@
           </div>
 
           <div class="col-lg-5" data-aos="zoom-out" data-aos-delay="200">
-            <form class="php-email-form" id="cadastroForm">
+            <form action="https://api.sheetmonkey.io/form/vuzCkLpZhauEUK68PtU6Ld" method="post" class="php-email-form">
               <h3>Realize seu Cadastro</h3>
-              <div class="row gy-3 mt-2">
+              <div class="row gy-3">
 
                 <div class="col-12">
                   <input class="form-control" type="text" name="doc"  placeholder="CPF/CNPJ" required=""></input>
@@ -130,7 +115,7 @@
                   <input type="email" class="form-control" name="email" placeholder="Email" required="">
                 </div>
 
-                <div class="col-12 mb-3">
+                <div class="col-12">
                   <input type="text" class="form-control" name="telefone" placeholder="Telefone" required="">
                 </div>
 
@@ -183,7 +168,7 @@
             <div class="row content">
               <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
                 <h3>Turbine seus Investimentos</h3>
-                <p id="text-index">
+                <p class="fst-italic" id="text-index">
                   Invista em nossas usinas fotovoltaicas e desfrute de uma rentabilidade de até 2,26% ao mês. Com a <strong>Virtutis Energy</strong>, você garante economia e rentabilidade em um só lugar. Potencialize seus investimentos e faça parte do futuro da energia renovável!
                 </p>
                 <div class="info"> <a href="services.html" class="btn-get-started">Saiba mais</a></div>
@@ -198,7 +183,7 @@
             <div class="row content">
               <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
                 <h3>Economia para o Cliente</h3>
-                <p id="text-index">
+                <p class="fst-italic" id="text-index">
                   A <strong>Virtutis Energy</strong> é uma fintech de energia solar que desenvolve, gerencia e aluga usinas fotovoltaicas próprias. Oferecemos redução de custos com energia elétrica para nossos clientes, sem a necessidade de que eles paguem pela construção e manutenção de placas solares. Além disso, proporcionamos aos investidores a oportunidade de participar do desenvolvimento dos sistemas de geração de energia, oferecendo-lhes participação nos lucros oriundos da locação das usinas.
                 </p>
                 <p id="text-index">Com a <strong>Virtutis Energy</strong>, você aproveita uma solução sustentável que combina economia, rentabilidade e impacto positivo no meio ambiente. Junte-se a nós e faça parte do futuro da energia renovável!</p>
@@ -226,35 +211,36 @@
     <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-6 col-md-6 footer-about">
-
-          <div class="col-lg-6 col-md-3 footer-links">
-            <h4>Links úteis</h4>
-            <ul>
-              <li><a href="index.html">Virtutis Energy</a></li>
-              <li><a href="about.html">Sobre nós</a></li>
-              <li><a href="venha-ser-virtutis.html">Trabalhe Conosco</a></li>
-              <li><a href="politics.html">Política de Privacidade</a></li>
-              <li><a href="https://api.whatsapp.com/send?phone=558582351512">Fale conosco</a></li>
-            </ul>
+          <a href="index.html" class="logo d-flex align-items-center">
+            <!-- <span class="sitename">UpConstruction</span> -->
+            <img src="assets/img/logo.png" alt="Virtutis" style="scale: 2;">
+          </a>
+          <div class="footer-contact pt-3">
+            <p>Av. Humberto Monte s/n</p>
+            <p>Bloco 334 - Condomínio de Empreendedorismo e Inovação</p>
+            <p>Campus do Pici - Universidade Federal do Ceará</p>
+            <p>Pici, Fortaleza - CE. CEP: 60440-593</p>
+            <p>40.121.761/0001-16</p>
+            <!-- <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p> -->
+            <!-- <p><strong>Email:</strong> <span>info@example.com</span></p> -->
           </div>
-
           <div class="social-links d-flex mt-4">
             <a href="https://www.instagram.com/virtutisenergy?igsh=MXc5bjdpcmthMm94ZQ=="><i class="bi bi-instagram"></i></a>
             <a href="https://www.linkedin.com/company/virtutis-energy/"><i class="bi bi-linkedin"></i></a>
           </div>
         </div>
 
-        <div class="footer-contact col mb-5">
-          <h4>Endereço</h4>
-          <p>Av. Humberto Monte s/n</p>
-          <p>Bloco 334 - Condomínio de Empreendedorismo e Inovação</p>
-          <p>Campus do Pici - Universidade Federal do Ceará</p>
-          <p>Pici, Fortaleza - CE. CEP: 60440-593</p>
-          <p class="mb-4">40.121.761/0001-16</p>
-          <!-- <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p> -->
-          <!-- <p><strong>Email:</strong> <span>info@example.com</span></p> -->
-          <img src="assets/img/Logo para Desenhos Técnicos.png" class="logo-tec">
+        <div class="col-lg-6 col-md-3 footer-links">
+          <h4>Links úteis</h4>
+          <ul>
+            <li><a href="index.html">Virtutis Energy</a></li>
+            <li><a href="about.html">Sobre nós</a></li>
+            <li><a href="venha-ser-virtutis.html">Trabalhe Conosco</a></li>
+            <li><a href="politics.html">Política de Privacidade</a></li>
+            <li><a href="https://api.whatsapp.com/send?phone=558582351512">Fale conosco</a></li>
+          </ul>
         </div>
+
        
 
       </div>
@@ -275,7 +261,7 @@
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- <script src="assets/vendor/php-email-form/validate.js"></script> -->
+  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
@@ -285,8 +271,6 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-  <script src="assets/js/database.js" type="module"></script>
-  
 
 </body>
 
