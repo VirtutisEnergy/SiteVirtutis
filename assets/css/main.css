@@ -26,6 +26,8 @@
   --accent-color: #02083b; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --black-color: #312f2f;
+  --accent-color-trans:#02083b57;
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
@@ -107,9 +109,13 @@ h6 {
   height: 9%;
 }
 
+.logo {
+  margin-left: 20px;
+}
+
 .header .logo img {
   max-height: 32px;
-  margin-right: 8px;
+  margin-left: 10px;
 }
 
 .header .logo h1 {
@@ -752,18 +758,62 @@ section,
 --------------------------------------------------------------*/
 .hero {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   position: relative;
-  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  margin-top: 50px;
+}
+
+.hero::after {
+  content: "";
+  position:absolute;
+  bottom: 0;
+  left: 10%;
+  width: 80%;
+  border-bottom: 1px solid var(--accent-color-trans);
 }
 
 #name-hero{
-  color: var(--accent-color);
-  font-size:56px;
+  color: var(--black-color);
+  font-size:50px;
+  font-weight: bold;
+}
+
+.name-hero {
+  line-height: 0.8;
+}
+
+.percent {
+  font-size: 55px;
+  color: var(--nav-dropdown-hover-color);
+}
+
+.sub-name {
+  color: var(--default-color);
+}
+
+.btn-sim {
+  border-radius: 10px;
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  padding: 20px;
+  font-size: 15px;
+  border: none;
+}
+
+.btn-sim:hover {
+  border-radius: 10px;
+  background-color: var(--nav-dropdown-hover-color);
+  color: var(--contrast-color);
+}
+
+.buttons {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .text-hero{
@@ -777,6 +827,25 @@ section,
   z-index: 3;
   padding: 140px 0 200px 0;
 }
+
+.hero-img {
+  border-radius: 10px;
+  object-position:center 85% ;
+}
+
+@media (max-width: 1400px) {
+  .buttons {
+    width: 45%;
+  }
+
+}
+@media (max-width: 1200px) {
+  .buttons {
+    width: 60%;
+  }
+
+}
+
 
 @media (max-width: 768px),
 (max-height: 480px) {
@@ -800,7 +869,7 @@ section,
   /* margin-bottom: 30px; */
   /* padding-bottom: 30px; */
   font-size: 70px;
-  font-weight: 700;
+  font-weight: 100; /* mod */
   position: relative;
 }
 
@@ -821,6 +890,7 @@ section,
   /* font-size: 10px; */
   display: inline;
 }
+
 @media (max-width: 500px) {
 
   .header .logo img{
@@ -865,7 +935,7 @@ section,
     font-size: 30px !important;
   }
   #name-hero{
-    color: var(--accent-color);
+    color: var(--black-color);
     font-size: 40px;
   }
 
@@ -945,7 +1015,7 @@ section,
 # Get Started Section
 --------------------------------------------------------------*/
 .get-started .content {
-  padding: 30px 0;
+  padding: 0;
 }
 
 .get-started .content h3 {
@@ -2980,10 +3050,6 @@ input[type=number]::-webkit-inner-spin-button {
 .header-02 {
   border-bottom: 0.5px solid #02083b2d;
 } 
-
-.main-02 {
-  margin-top: 30px;
-}
 
 .item-02 {
   padding: 100px;
