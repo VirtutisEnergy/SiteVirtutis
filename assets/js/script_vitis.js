@@ -63,7 +63,7 @@ document.getElementById('calculateButton').addEventListener('click', function() 
       const year = futureDate.getFullYear();
       const month = futureDate.getMonth() + 1;
 
-      const ipcaEntry = ipcaData.find(data => data.year === year );
+      const ipcaEntry = ipcaData.find(data => data.year === year - 1 );
       const baseYield = ipcaEntry ? ipcaEntry.baseYield : 0;
 
       let rendimentoMensal;
