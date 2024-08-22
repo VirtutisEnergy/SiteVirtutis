@@ -63,17 +63,15 @@ document.getElementById('calculateButton').addEventListener('click', function() 
       const year = futureDate.getFullYear();
       const month = futureDate.getMonth() + 1;
 
-      const ipcaEntry = ipcaData.find(data => data.year === year);
+      const ipcaEntry = ipcaData.find(data => data.year === year );
       const baseYield = ipcaEntry ? ipcaEntry.baseYield : 0;
 
       let rendimentoMensal;
-      if (year === 2024 && month < 8) {
-          rendimentoMensal = yieldBase * vitisValue;
-      } else if (year === 2024 && month >= 8) {
-          rendimentoMensal = baseYield * vitisValue * Math.pow(2, 3); // Nível 3 a partir de agosto de 2024
-      } else {
-          rendimentoMensal = baseYield * vitisValue;
-      }
+      if (year == 2024 && month < 8) {
+        rendimentoMensal = yieldBase * vitisValue;
+    } else {
+        rendimentoMensal = baseYield * vitisValue * Math.pow(2, 3); // Nível 3 a partir de agosto de 2024 para todos os anos
+    }
 
       bonificacaoAcumulada += rendimentoMensal;
   }
