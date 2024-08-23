@@ -1,15 +1,16 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
 import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
+import * as keys from '../keys/key.js'
 
 // Configuração do Firebase
 const firebaseConfig = {
-  apiKey: "AIzaSyAOULGJ-s9x1gxG8lGLfXGx2zRnqV_-4yE",
-  authDomain: "virtutisform.firebaseapp.com",
-  projectId: "virtutisform",
-  storageBucket: "virtutisform.appspot.com",
-  messagingSenderId: "469441728660",
-  appId: "1:469441728660:web:9165b1b322c64fdb646481"
+  apiKey: keys.apiKey,
+  authDomain: keys.authDomain,
+  projectId: keys.projectId,
+  storageBucket: keys.storageBucket,
+  messagingSenderId: keys.messagingSenderId,
+  appId: keys.app
 };
 
 // Inicializar Firebase
@@ -29,6 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const nome = form.nome.value;
       const email = form.email.value;
       const telefone = form.telefone.value;
+      const senha = "virtutis1234";
+      const dataEnvio = new Date(); // Obtém a data e hora atuais
 
       try {
         // Adiciona os dados ao Firestore
@@ -36,7 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
           doc: doc,
           nome: nome,
           email: email,
-          telefone: telefone
+          telefone: telefone,
+          senha: senha,
+          dataEnvio: dataEnvio // Adiciona a data de envio
         });
         alert('Cadastro realizado com sucesso!');
         form.reset(); // Limpa o formulário
