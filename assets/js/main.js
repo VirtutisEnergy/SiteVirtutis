@@ -171,3 +171,7 @@
 
 
 })();
+
+document.getElementById("btn-acoount").onclick = function() {
+  window.location.href = "services.html";
+};
