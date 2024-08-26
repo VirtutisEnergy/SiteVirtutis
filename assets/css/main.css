@@ -91,6 +91,13 @@ h6 {
 /* PHP Email Form Messages
 ------------------------------*/
 
+/*--------------------------------------------------------------
+# Global
+--------------------------------------------------------------*/
+
+p {
+  text-align: justify;
+}
 
 /*--------------------------------------------------------------
 # Global Header
@@ -171,10 +178,10 @@ h6 {
 
   .navmenu a,
   .navmenu a:focus {
-    color: var(--nav-dropdown-hover-color);
+    color: var(--accent-color);
     font-size: 14px;
     padding: 0 2px;
-    font-family: var(--nav-font);
+    font-family: var(--accent-color);
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -489,8 +496,8 @@ h6 {
 }
 
 .footer .social-links a:hover {
-  color: var(--accent-color);
-  border-color: var(--accent-color);
+  color: color-mix(in srgb, var(--contrast-color), transparent 0);
+  border-color: color-mix(in srgb, var(--contrast-color), transparent 0);
 }
 
 .footer h4 {
@@ -533,7 +540,7 @@ h6 {
 }
 
 .footer .footer-links ul a:hover {
-  color: var(--accent-color);
+  color: color-mix(in srgb, var(--contrast-color), transparent 0)
 }
 
 .footer .footer-contact p {
@@ -622,10 +629,10 @@ h6 {
   line-height: 0;
 }
 
-.scroll-top:hover {
+/*.scroll-top:hover {
   background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
   color: var(--contrast-color);
-}
+}*/
 
 .scroll-top.active {
   visibility: visible;
@@ -818,7 +825,7 @@ section,
 } */
 
 .subtext{
-  /* font-size: 10px; */
+  font-size: 31px;
   display: inline;
 }
 @media (max-width: 500px) {
@@ -868,6 +875,9 @@ section,
     color: var(--accent-color);
     font-size: 40px;
   }
+  .subtext {
+    font-size: 22px;
+  }
 
   .hero .hero-image img{
     transform: scale(2) translateY(5%);
@@ -886,7 +896,8 @@ section,
 }
 
 .hero .info .btn-get-started,.btn-kind {
-  color: var(--nav-dropdown-color);
+  color: var(--contrast-color);
+  background-color: var(--accent-color);
   font-family: var(--heading-font);
   font-weight: 500;
   font-size: 16px;
@@ -894,14 +905,15 @@ section,
   display: inline-block;
   padding: 12px;
   border-radius: 50px;
-  transition: 0.5s;
   margin: 10px;
-  border: 3px solid var(--contrast-color);
   font-weight: 800;
+  box-shadow: 0 0 0 2px transparent; /* Inicialmente transparente */
+  transition: box-shadow 0.5s ease; /* Transição suave para box-shadow */
 }
 
 .content .info .btn-get-started {
-  color: var(--accent-color);
+  color: var(--contrast-color);
+  background-color: var(--accent-color);
   font-family: var(--heading-font);
   font-weight: 500;
   font-size: 16px;
@@ -909,22 +921,20 @@ section,
   display: inline-block;
   padding: 12px 40px;
   border-radius: 50px;
-  transition: 0.5s;
   margin: 10px;
-  border: 3px solid var(--accent-color);
+  border: none;
   font-weight: 800;
+  box-shadow: 0 0 0 2px transparent; /* Inicialmente transparente */
+  transition: box-shadow 0.5s ease; /* Transição suave para box-shadow */
 }
-
-
 
 
 .hero .info .btn-get-started:hover {
-  background: var(--accent-color);
-  color: var(--contrast-color);
+  box-shadow: 0 0 0 2px var(--accent-color); /* Simula a borda com box-shadow */
 }
 
 .content .info .btn-get-started:hover,.btn-kind:hover {
-  background: var(--accent-color);
+  box-shadow: 0 0 0 2px var(--accent-color); /* Simula a borda com box-shadow */
   color: var(--contrast-color);
 }
 
@@ -1026,10 +1036,12 @@ section,
   padding: 10px 30px;
   transition: 0.4s;
   border-radius: 4px;
+  outline: 2px solid transparent;
+  transition: all 0.7s ease;
 }
 
 .get-started .php-email-form button[type=submit]:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+  outline-color: var(--accent-color);
 }
 
 /*--------------------------------------------------------------
@@ -2691,14 +2703,17 @@ section,
 .contact .php-email-form button[type=submit] {
   color: var(--contrast-color);
   background: var(--accent-color);
+  box-sizing: content-box;
   border: 0;
   padding: 10px 30px;
   transition: 0.4s;
   border-radius: 50px;
+  outline: 2px solid transparent;
+  transition: all 0.7s ease;
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+  outline-color: var(--accent-color);
 }
 
 .setor-link {
@@ -2953,6 +2968,8 @@ input[type=number]::-webkit-inner-spin-button {
   background-color: #02083b;
   border-radius: 2rem;
   padding: 8px;
+  border: 2px solid var(--contrast-color);
+  transition: border-color 0.7s ease;
 }
 
 #contact-cad a{
@@ -2960,8 +2977,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 #contact-cad:hover{
-  background-color: #6289b4;
-  transition: 0.3s;
+  border-color: transparent;
 }
 
 #contact-cad>a:before{
@@ -2989,8 +3005,14 @@ input[type=number]::-webkit-inner-spin-button {
   padding: 100px;
 }
 
-.arrow {
-  font-size: 3rem;
+.back {
+  font-size: 1.2rem;
+  margin-top: 40px;
+  text-decoration: underline;
+}
+
+.back:hover {
+  text-decoration: underline;
 }
 
 .hero-image {

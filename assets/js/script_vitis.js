@@ -32,7 +32,7 @@ const ipcaData = [
 ];
 document.getElementById('vitisInput').addEventListener('input', function() {
   const vitisValue = parseFloat(this.value);
-  const exchangeRate = 175.24; // Valor de 1 Vitis em R$
+  const exchangeRate = 183.34; // Valor de 1 Vitis em R$
   const result = vitisValue ? (vitisValue * exchangeRate).toFixed(2) : '0,00';
   document.getElementById('vitisResult').innerText = `R$ ${result.replace('.', ',')}`;
 });
