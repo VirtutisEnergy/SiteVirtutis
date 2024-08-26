@@ -983,12 +983,6 @@ section,
   object-position: center 45%; 
 }
 
-@media (max-width: 768px) {
-  .hero .info .btn-get-started {
-    box-shadow: 0 0 0 2px var(--accent-color); /* Simula a borda com box-shadow */
-  }
-}
-
 /*--------------------------------------------------------------
 # Get Started Section
 --------------------------------------------------------------*/
