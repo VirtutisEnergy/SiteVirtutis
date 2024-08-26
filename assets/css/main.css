@@ -892,6 +892,7 @@ section,
   .logo-tec {
     display: none;
   }
+
 }
 
 .hero .info p {
@@ -899,7 +900,7 @@ section,
   font-size: 18px;
 }
 
-.hero .info .btn-get-started,.btn-kind {
+.btn-get-started-calc {
   color: var(--contrast-color);
   background-color: var(--accent-color);
   font-family: var(--heading-font);
@@ -908,11 +909,32 @@ section,
   letter-spacing: 1px;
   display: inline-block;
   padding: 12px;
-  border-radius: 50px;
+  border-radius: 10px;
+  margin: 10px 0;
+  border: none;
+  font-weight: 800;
+  box-shadow: 0 0 0 2px transparent; /* Inicialmente transparente */
+  transition: box-shadow 0.5s ease; /* Transição suave para box-shadow */
+}
+
+.btn-get-started,.btn-kind {
+  color: var(--contrast-color);
+  background-color: var(--accent-color);
+  font-family: var(--heading-font);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px;
+  border-radius: 10px;
   margin: 10px;
   font-weight: 800;
   box-shadow: 0 0 0 2px transparent; /* Inicialmente transparente */
   transition: box-shadow 0.5s ease; /* Transição suave para box-shadow */
+}
+
+.hero .info .btn-get-started {
+  border-radius: 10px;
 }
 
 .content .info .btn-get-started {
@@ -924,7 +946,7 @@ section,
   letter-spacing: 1px;
   display: inline-block;
   padding: 12px 40px;
-  border-radius: 50px;
+  border-radius: 10px;
   margin: 10px;
   border: none;
   font-weight: 800;
@@ -933,7 +955,12 @@ section,
 }
 
 
-.hero .info .btn-get-started:hover {
+.btn-get-started:hover {
+  box-shadow: 0 0 0 2px var(--accent-color); /* Simula a borda com box-shadow */
+  color: var(--contrast-color);
+}
+
+.btn-get-started-calc:hover {
   box-shadow: 0 0 0 2px var(--accent-color); /* Simula a borda com box-shadow */
 }
 
@@ -953,6 +980,12 @@ section,
   height: 100%;
   object-fit: cover;
   object-position: center 45%; 
+}
+
+@media (max-width: 768px) {
+  .hero .info .btn-get-started:hover {
+    box-shadow: none;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -1039,7 +1072,7 @@ section,
   border: 0;
   padding: 10px 30px;
   transition: 0.4s;
-  border-radius: 4px;
+  border-radius: 10px;
   outline: 2px solid transparent;
   transition: all 0.7s ease;
 }
@@ -2711,7 +2744,7 @@ section,
   border: 0;
   padding: 10px 30px;
   transition: 0.4s;
-  border-radius: 50px;
+  border-radius: 10px;
   outline: 2px solid transparent;
   transition: all 0.7s ease;
 }
@@ -2970,7 +3003,7 @@ input[type=number]::-webkit-inner-spin-button {
 
 #contact-cad{
   background-color: #02083b;
-  border-radius: 2rem;
+  border-radius: 10px;
   padding: 8px;
   border: 2px solid var(--contrast-color);
   transition: border-color 0.7s ease;
