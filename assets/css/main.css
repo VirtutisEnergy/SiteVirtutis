@@ -888,6 +888,10 @@ section,
     visibility: hidden;
     min-height: 0% !important;
   }
+
+  .logo-tec {
+    display: none;
+  }
 }
 
 .hero .info p {
