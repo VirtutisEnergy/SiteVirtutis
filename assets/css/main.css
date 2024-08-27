@@ -458,6 +458,10 @@ p {
   padding-top: 50px;
 }
 
+.sobre {
+  padding-bottom: 0;
+}
+
 .footer .footer-about .logo {
   line-height: 1;
   margin-bottom: 25px;
