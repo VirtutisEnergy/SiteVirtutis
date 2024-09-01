@@ -121,10 +121,10 @@ document.getElementById('calculateButton').addEventListener('click', function() 
   }
 
   if (vitisSelect.value === 'usina-ve1') {
-    document.getElementById('totalYield').innerText = `Rendimento Acumulado: R$ ${bonificacaoAcumulada.toFixed(2).replace('.', ',')} (referente à Usina VE.1 - 2023.01)`;
+    document.getElementById('totalYield').innerHTML = `Rendimento Acumulado:<br>R$ ${bonificacaoAcumulada.toFixed(2).replace('.', ',')}<br>(Usina VE.1 - 2023.01)`;
   }
   else if (vitisSelect.value === 'usina-ve2') {
-    document.getElementById('totalYield').innerText = `Rendimento Acumulado: R$ ${bonificacaoAcumulada.toFixed(2).replace('.', ',')} (referente à Usina VE.1 - 2024.01)`;
+    document.getElementById('totalYield').innerHTML = `Rendimento Acumulado: <br>R$ ${bonificacaoAcumulada.toFixed(2).replace('.', ',')}<br> (Usina VE.1 - 2024.01)`;
   }
 });
 
@@ -133,12 +133,12 @@ function resizeHandler() { //função para alterar o placeholder para que caiba
   const inputFieldVitis = document.getElementById('vitisInput');
   const inputFieldMonths = document.getElementById('monthsInput');
 
-  if (width > 991 && width < 1400){
+  if (width > 767 && width < 3000){
     inputFieldVitis.placeholder = 'Vitis';
     inputFieldMonths.placeholder = 'Meses';
   } else {
-    inputFieldVitis.placeholder = 'Qtde de Vitis';
-    inputFieldMonths.placeholder = 'Qtde de Meses';
+    inputFieldVitis.placeholder = 'Quantidade de Vitis';
+    inputFieldMonths.placeholder = 'Meses Aportados';
   }
 }
 window.addEventListener('resize', resizeHandler); // Adicionar o evento de redimensionamento
