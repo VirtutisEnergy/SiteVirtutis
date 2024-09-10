@@ -39,11 +39,18 @@ document.addEventListener('DOMContentLoaded', function() {
   // Função para calcular e exibir o resultado
   function calculateVitis() {
     let exchangeRate = 0;
+    let cupom = document.getElementById('cupom');
+    let desconto = 1;
+
+    if (cupom.value.trim() === '#Vitis20') {
+      desconto = 0.8;
+    }
+
 
     if (usinaSelect.value === 'usina-ve1') {
-        exchangeRate = 183.34; // Valor de 1 Vitis em R$ - usina ve.1 - 2023.01
+        exchangeRate = 183.34 * desconto; // Valor de 1 Vitis em R$ - usina ve.1 - 2023.01
     } else if (usinaSelect.value === 'usina-ve2') {
-        exchangeRate = 152.78; // Valor de 1 Vitis em R$ - usina ve.1 - 2024.01
+        exchangeRate = 152.78 * desconto; // Valor de 1 Vitis em R$ - usina ve.1 - 2024.01
     }
 
     const vitisValue = parseFloat(vitisInput.value);
