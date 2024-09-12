@@ -31,10 +31,13 @@ const ipcaData = [
   { year: 2049, ipca: 1.05, baseYield: 1.29 },
 ];
 
+
+
 document.addEventListener('DOMContentLoaded', function() {
   const usinaSelect = document.getElementById('usina');
   const vitisInput = document.getElementById('vitisInput');
   const vitisResult = document.getElementById('vitisResult');
+  const vitisCupom = document.getElementById('cupom')
 
   // Função para calcular e exibir o resultado
   function calculateVitis() {
@@ -61,6 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Adicionar listeners para acionar a função quando houver mudança no select ou input no campo de texto
   usinaSelect.addEventListener('change', calculateVitis);
   vitisInput.addEventListener('input', calculateVitis);
+  vitisCupom.addEventListener('input', calculateVitis);
 
   // Executar o cálculo inicial se necessário
   calculateVitis();
