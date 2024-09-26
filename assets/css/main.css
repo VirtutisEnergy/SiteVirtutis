@@ -775,6 +775,7 @@ section,
 #name-hero{
   color: var(--accent-color);
   font-size:56px;
+  width: 100%;
 }
 
 .text-hero{
@@ -878,6 +879,7 @@ section,
   #name-hero{
     color: var(--accent-color);
     font-size: 40px;
+    text-wrap: nowrap;
   }
   .subtext {
     font-size: 22px;

@@ -176,3 +176,4 @@ document.getElementById("btn-acoount").onclick = function() {
   window.location.href = "contact.html";
 };
 
+getElementById('info-btn').addEventListener('')
