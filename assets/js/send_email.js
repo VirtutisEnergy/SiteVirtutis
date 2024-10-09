@@ -6,10 +6,7 @@ import * as keys from '../keys/key.js'
 const form = document.getElementById('cadastroForm');
 document.getElementById('cadastroForm').addEventListener('submit', function(event) {
     event.preventDefault();
-
-   
-
-
+    
     // ID do template e do serviço que você criou no EmailJS
     const templateParams = {
         nome:form.nome.value,

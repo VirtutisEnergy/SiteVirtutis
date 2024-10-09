@@ -8,7 +8,6 @@ var cleave = new Cleave('#monthlyBill', {
     // rawValueTrimPrefix: true
   });
 
-
   function calcularEconomia(valorConta) {
     const precoEnergia = 1.1; // R$/kWh (Preço da Energia)
     const energiaGerada = 10000; // kWh (Energia Gerada pela Usina)
