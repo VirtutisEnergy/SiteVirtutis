@@ -113,11 +113,12 @@
               <div class="row gy-3 mt-2">
 
                 <div class="col-12">
-                  <input class="form-control" type="number" name="doc"  placeholder="CPF/CNPJ" required=""></input>
+                  <input type="text" name="doc" class="form-control" placeholder="CPF/CNPJ" required oninput="this.value = this.value.replace(/[^0-9/\.\+\-\s]/g, '')">
                 </div>
 
                 <div class="col-12">
-                  <input type="text" name="nome" class="form-control" placeholder="Nome" required="">
+                  <input type="text" name="nome" class="form-control" placeholder="Nome" required oninput="this.value = this.value.replace(/[^A-Za-zÀ-ÿ\s]/g, '')">
+
                 </div>
 
                 <div class="col-12 ">
@@ -125,7 +126,7 @@
                 </div>
 
                 <div class="col-12 mb-3">
-                  <input type="number" class="form-control" name="telefone" placeholder="Telefone" required="">
+                  <input type="text" name="doc" class="form-control" placeholder="Telefone" required oninput="this.value = this.value.replace(/[^0-9+\-\s]/g, '')">
                 </div>
 
                 
