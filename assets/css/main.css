@@ -981,7 +981,7 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Get Started Section
+# Get Started Section // Página Principal
 --------------------------------------------------------------*/
 .get-started .content {
   padding: 30px 0;
@@ -1036,6 +1036,7 @@ section,
 
 .get-started .php-email-form input[type=text],
 .get-started .php-email-form input[type=email],
+.get-started .php-email-form input[type=number],
 .get-started .php-email-form textarea {
   font-size: 14px;
   padding: 10px 15px;
@@ -1048,12 +1049,14 @@ section,
 
 .get-started .php-email-form input[type=text]:focus,
 .get-started .php-email-form input[type=email]:focus,
+.get-started .php-email-form input[type=number]:focus,
 .get-started .php-email-form textarea:focus {
   border-color: var(--accent-color);
 }
 
 .get-started .php-email-form input[type=text]::placeholder,
 .get-started .php-email-form input[type=email]::placeholder,
+.get-started .php-email-form input[type=number]::placeholder,
 .get-started .php-email-form textarea::placeholder {
   color: color-mix(in srgb, var(--default-color), transparent 70%);
 }
@@ -2670,7 +2673,7 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Contact Section
+# Contact Section // Trabalhe conosco
 --------------------------------------------------------------*/
 .contact .info-item {
   background-color: var(--surface-color);
@@ -2721,6 +2724,7 @@ section,
 
 .contact .php-email-form input[type=text],
 .contact .php-email-form input[type=email],
+.contact .php-email-form input[type=number],
 .contact .php-email-form textarea {
   font-size: 14px;
   padding: 10px 15px;
@@ -2733,12 +2737,14 @@ section,
 
 .contact .php-email-form input[type=text]:focus,
 .contact .php-email-form input[type=email]:focus,
+.contact .php-email-form input[type=number]:focus,
 .contact .php-email-form textarea:focus {
   border-color: var(--accent-color);
 }
 
 .contact .php-email-form input[type=text]::placeholder,
 .contact .php-email-form input[type=email]::placeholder,
+.contact .php-email-form input[type=number]::placeholder,
 .contact .php-email-form textarea::placeholder {
   color: color-mix(in srgb, var(--default-color), transparent 70%);
 }
