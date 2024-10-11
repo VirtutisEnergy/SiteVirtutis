@@ -416,13 +416,13 @@ p {
         align-items: center;
   }
   #contact-cad{
-    background-color:#ffffff !important;
+    background-color:#02083b !important;
     /* border-radius: 2rem; */
     /* padding: 8px; */
   }
   
   #contact-cad a{
-    color: var(--accent-color) !important;
+    color: var(--background-color) !important;
   }
   
   
