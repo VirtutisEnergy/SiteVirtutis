@@ -2987,7 +2987,10 @@ section,
   color:#f4f7f6 ;
   background-color: #02083b;
 }
-
+.logo_email i:hover{
+  color:#f4f7f6 ;
+  background-color: #02083b;
+}
 .result-box {
   font-size: 1.1rem;
   font-weight: bold;
