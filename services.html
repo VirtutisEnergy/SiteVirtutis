@@ -180,7 +180,7 @@
           </div>
 
           <div class="features-image col-lg-5 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="200">
-            <img src="assets/img/hero-carousel/hero-carousel-2.jpg" alt="">
+            <img src="assets/img/hero-carousel/hero-carousel-3.jpg" alt="">
           </div>
 
         </div>
@@ -222,28 +222,80 @@
         </p>        </div>
       </div><!-- End Service Item -->
 
-      <!-- Ajustando a estrutura para o gráfico -->
-<div class="col-lg-8 col-md-12 mx-auto" data-aos="fade-up" data-aos-delay="600">
-  <div class="service-item position-relative">
-    <div class="icon">
-      <i class="bi bi-brightness-alt-high-fill"></i>
-    </div>
-    <h3>Gráfico Vitis - Comparativo</h3>
-    <img src="assets/img/hero-carousel/Grafico Vitis.png" class="vitis-grafic img-fluid" alt="Gráfico Vitis">
-  </div>
-</div><!-- End Service Item -->
-
-    </div><!-- End row -->
-    
-  </div><!-- End container -->
-  <br>
-  <div class="d-flex justify-content-center "data-aos="fade-up" data-aos-delay="100">
-    <a href="contact.html" class="btn-kind">Abra sua conta</a>
-  </div>
-</section><!-- /Services Section -->
-
-
-
+      <section id="grafico-vitis" class="grafico-vitis section">
+        <div class="service-item position-relative">
+          <div class="icon">
+            <i class="bi bi-brightness-alt-high-fill"></i>
+          </div>
+          <h3>Gráfico Vitis - Comparativo</h3>
+      
+          <div class="container" data-aos="fade-up" data-aos-delay="100">
+      
+            <div class="swiper init-swiper">
+              <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 600,
+                  "autoplay": {
+                    "delay": 5000
+                  },
+                  "slidesPerView": 1,
+                  "pagination": {
+                    "el": ".swiper-pagination",
+                    "type": "bullets",
+                    "clickable": true
+                  },
+                  "navigation": {
+                    "nextEl": ".swiper-button-next",
+                    "prevEl": ".swiper-button-prev"
+                  },
+                  "breakpoints": {
+                    "640": {
+                      "slidesPerView": 1,
+                      "spaceBetween": 20
+                    },
+                    "768": {
+                      "slidesPerView": 1,
+                      "spaceBetween": 30
+                    },
+                    "1024": {
+                      "slidesPerView": 1,
+                      "spaceBetween": 40
+                    }
+                  }
+                }
+              </script>
+              
+              <div class="swiper-wrapper">
+                <!-- Primeiro gráfico -->
+                <div class="swiper-slide">
+                  <div class="grafico-wrap">
+                    <div class="grafico-item">
+                      <img src="assets/img/hero-carousel/Grafico Vitis.png" class="grafico-img img-fluid" alt="Gráfico Vitis">
+                    </div>
+                  </div>
+                </div>
+      
+                <!-- Segundo gráfico -->
+                <div class="swiper-slide">
+                  <div class="grafico-wrap">
+                    <div class="grafico-item">
+                      <img src="assets/img/hero-carousel/Grafico Vitis-4.png" class="grafico-img img-fluid" alt="Gráfico Vitis 2">
+                    </div>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="swiper-pagination"></div>
+              <!-- Setas de navegação -->
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+      
+          </div>
+        </div>
+      </section>
+      
 
   </main>
 
