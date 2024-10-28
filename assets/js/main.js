@@ -159,6 +159,15 @@
     });
   }
 
+  document.querySelector('.mobile-nav-toggle').addEventListener('click', function() {
+    const button = document.querySelector('#contact-cad');
+    button.style.display = 'none';
+    setTimeout(function() {
+        button.style.display = 'block';
+    }, 10);
+});
+
+
   window.addEventListener("load", initSwiper);
 
   /**
