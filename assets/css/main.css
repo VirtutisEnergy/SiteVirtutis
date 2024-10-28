@@ -428,6 +428,13 @@ p {
     align-items: center;
   }
 
+  .mobile-nav-active .navmenu ul {
+    /* Limita a altura e adiciona rolagem */
+    max-height: 50vh; /* Ajuste conforme a necessidade em porcetagem*/
+    overflow-y: auto;
+  }
+
+
   #contact-cad {
     background-color: #02083b !important;
     /*box-sizing: border-box;
