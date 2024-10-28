@@ -430,15 +430,15 @@ p {
 
   #contact-cad {
     background-color: #02083b !important;
-    box-sizing: border-box;
+    /*box-sizing: border-box;
     margin: 0;
-    padding: 10px 15px;
+    padding: 10px 15px; */
     /* border-radius: 2rem; */
     /* padding: 8px; */
   }
 
   #contact-cad a {
-    color: var(--background-color) !important;
+    color: var(--contrast-color) !important;
   }
 
 
