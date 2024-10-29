@@ -8,5 +8,4 @@ export const serviceID = 'service_0cqyfzc';
 export const template_id = 'template_z3me6do';
 export const id_email = 'rLFHPldnxYhmrIHCK';
 
-
 export default apiKey;authDomain;projectId;storageBucket;messagingSenderId;appId;serviceID;template_id;id_email
