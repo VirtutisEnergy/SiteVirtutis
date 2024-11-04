@@ -1,0 +1,96 @@
+@import url(../main.css);
+/*--------------------------------------------------------------
+# Get Started Section // Página Principal
+--------------------------------------------------------------*/
+.get-started .content {
+  padding: 30px 0;
+}
+
+.get-started .content h3 {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+  position: relative;
+}
+
+.get-started .content h3:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--nav-dropdown-hover-color);
+  left: 0;
+  bottom: 0;
+}
+
+.get-started .content p {
+  font-size: 14px;
+}
+
+.get-started .php-email-form {
+  background: color-mix(in srgb, var(--default-color), transparent 97%);
+  padding: 30px;
+  height: 100%;
+}
+
+@media (max-width: 575px) {
+  .get-started .php-email-form {
+    padding: 20px;
+  }
+}
+
+.get-started .php-email-form h3 {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.get-started .php-email-form p {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.get-started .php-email-form input[type=text],
+.get-started .php-email-form input[type=email],
+.get-started .php-email-form input[type=number],
+.get-started .php-email-form textarea {
+  font-size: 14px;
+  padding: 10px 15px;
+  box-shadow: none;
+  border-radius: 0;
+  color: var(--default-color);
+  background-color: color-mix(in srgb, var(--background-color), transparent 20%);
+  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
+}
+
+.get-started .php-email-form input[type=text]:focus,
+.get-started .php-email-form input[type=email]:focus,
+.get-started .php-email-form input[type=number]:focus,
+.get-started .php-email-form textarea:focus {
+  border-color: var(--accent-color);
+}
+
+.get-started .php-email-form input[type=text]::placeholder,
+.get-started .php-email-form input[type=email]::placeholder,
+.get-started .php-email-form input[type=number]::placeholder,
+.get-started .php-email-form textarea::placeholder {
+  color: color-mix(in srgb, var(--default-color), transparent 70%);
+}
+
+.get-started .php-email-form button[type=submit] {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  border: 0;
+  padding: 10px 30px;
+  transition: 0.4s;
+  border-radius: 10px;
+  outline: 2px solid transparent;
+  transition: all 0.7s ease;
+}
+
+.get-started .php-email-form button[type=submit]:hover {
+  outline-color: var(--accent-color);
+}

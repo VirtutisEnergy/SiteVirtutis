@@ -1,0 +1,238 @@
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+.hero {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#name-hero {
+    color: var(--accent-color);
+    font-size: 56px;
+    width: 100%;
+}
+
+.text-hero {
+    color: var(--accent-color) !important;
+    font-weight: 500;
+}
+
+.hero .info {
+    position: relative;
+    inset: 0;
+    z-index: 3;
+    padding: 140px 0 200px 0;
+}
+
+@media (max-width: 768px),
+(max-height: 480px) {
+    .hero .info {
+        padding: 160px 10px 250px 10px;
+    }
+
+
+    .hero .hero-image img {
+        object-position: center 85% !important;
+    }
+}
+
+#invisible-text {
+    visibility: hidden;
+    font-size: 45%;
+    height: 0;
+}
+
+
+.hero .info h2 {
+    /* margin-bottom: 30px; */
+    /* padding-bottom: 30px; */
+    font-size: 70px;
+    font-weight: 700;
+    position: relative;
+}
+
+/* .hero .info h2:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--accent-color);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  } */
+
+.subtext {
+    font-size: 31px;
+    display: inline;
+}
+
+@media (max-width: 500px) {
+
+    .header .logo img {
+        /* margin: 10px; */
+        size: 0.5;
+    }
+
+    .navbar_home {
+        visibility: visible !important;
+        /* width: 100px; */
+    }
+
+    .navbar_about {
+        visibility: hidden;
+        width: 0;
+        height: 0;
+    }
+
+
+    .footer .footer-about .logo {
+        /* padding: 5px; */
+        scale: 0.8;
+    }
+
+
+    .block_letter {
+        display: block;
+    }
+}
+
+
+.navbar_home {
+    visibility: hidden;
+    width: 0;
+}
+
+@media (max-width: 768px) {
+    .hero .info h2 {
+        font-size: 36px;
+    }
+
+    .get-started .content h3 {
+        font-size: 30px !important;
+    }
+
+    #name-hero {
+        color: var(--accent-color);
+        font-size: 40px;
+        text-wrap: nowrap;
+    }
+
+    .subtext {
+        font-size: 22px;
+    }
+
+    .hero .hero-image img {
+        transform: scale(2) translateY(5%);
+
+    }
+
+    .features-image,
+    .about-img {
+        visibility: hidden;
+        min-height: 0% !important;
+    }
+
+    .logo-tec {
+        display: none;
+    }
+
+}
+
+.hero .info p {
+    color: color-mix(in srgb, var(--default-color), transparent 20%);
+    font-size: 18px;
+}
+
+.btn-get-started-calc {
+    color: var(--contrast-color);
+    background-color: var(--accent-color);
+    font-size: 16px;
+    font-weight: 500;
+    display: inline-block;
+    padding: 12px;
+    border-radius: 10px;
+    margin: 10px 0;
+    border: none;
+    box-shadow: 0 0 0 2px transparent;
+    /* Inicialmente transparente */
+    transition: box-shadow 0.5s ease;
+    /* Transição suave para box-shadow */
+}
+
+.btn-get-started,
+.btn-kind {
+    color: var(--contrast-color);
+    background-color: var(--accent-color);
+    font-size: 16px;
+    font-weight: 500;
+    display: inline-block;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 0 0 0 2px transparent;
+    /* Inicialmente transparente */
+    transition: box-shadow 0.5s ease;
+    /* Transição suave para box-shadow */
+}
+
+.hero .info .btn-get-started {
+    border-radius: 10px;
+}
+
+.content .info .btn-get-started {
+    color: var(--contrast-color);
+    background-color: var(--accent-color);
+    font-size: 16px;
+    font-weight: 500;
+    display: inline-block;
+    padding: 12px 40px;
+    border-radius: 10px;
+    margin: 10px;
+    border: none;
+    box-shadow: 0 0 0 2px transparent;
+    /* Inicialmente transparente */
+    transition: box-shadow 0.5s ease;
+    /* Transição suave para box-shadow */
+}
+
+
+.btn-get-started:hover {
+    box-shadow: 0 0 0 2px var(--accent-color);
+    /* Simula a borda com box-shadow */
+    color: var(--contrast-color);
+}
+
+.btn-get-started-calc:hover {
+    box-shadow: 0 0 0 2px var(--accent-color);
+    /* Simula a borda com box-shadow */
+}
+
+.content .info .btn-get-started:hover,
+.btn-kind:hover {
+    box-shadow: 0 0 0 2px var(--accent-color);
+    /* Simula a borda com box-shadow */
+    color: var(--contrast-color);
+}
+
+.hero .hero-image {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.hero .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 45%;
+}
