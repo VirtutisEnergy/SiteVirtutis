@@ -130,6 +130,9 @@ document.getElementById('calculateButton').addEventListener('click', function ()
         currentChart.destroy();
     }
 
+    //Fazer aparecer o gráfico
+    document.getElementById('yieldChart').classList.remove('hidden');
+
     // Configuração do gráfico
     const ctx = document.getElementById('yieldChart').getContext('2d');
     currentChart = new Chart(ctx, {

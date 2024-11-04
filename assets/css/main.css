@@ -1245,6 +1245,9 @@ section,
   background-color: red;
 }
 
+.hiddenVitis{
+  display: none;
+}
 
 
 
