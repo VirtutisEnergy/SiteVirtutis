@@ -149,6 +149,8 @@ document.getElementById('calculateButton').addEventListener('click', function ()
             }]
         },
         options: {
+            maintainAspectRatio: false,
+            responsive: true,
             scales: {
                 x: {
                     title: {
