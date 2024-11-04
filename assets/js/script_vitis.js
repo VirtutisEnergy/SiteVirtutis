@@ -131,7 +131,7 @@ document.getElementById('calculateButton').addEventListener('click', function ()
     }
 
     //Fazer aparecer o gráfico
-    document.getElementById('yieldChart').classList.remove('hidden');
+    document.getElementById('yieldChart').classList.remove('GraficoVitis');
 
     // Configuração do gráfico
     const ctx = document.getElementById('yieldChart').getContext('2d');
@@ -142,8 +142,9 @@ document.getElementById('calculateButton').addEventListener('click', function ()
             datasets: [{
                 label: 'Rendimento Acumulado (R$)',
                 data: yieldData,
-                borderColor: 'rgba(75, 192, 192, 1)',
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: '#02083b', // Cor da linha
+                backgroundColor: '#6289b4', // Cor do preenchimento
+                pointBackgroundColor: '#6289b4', // Cor dos pontos
                 fill: true
             }]
         },
@@ -152,15 +153,53 @@ document.getElementById('calculateButton').addEventListener('click', function ()
                 x: {
                     title: {
                         display: true,
-                        text: 'Meses'
+                        text: 'Meses',
+                        color: '#333', // Cor do título do eixo x
+                        font: {
+                            family: 'Arial',
+                            size: 14,
+                            weight: 'bold',
+                        },
+                    },
+                    ticks: {
+                        color: '#666', // Cor dos rótulos dos meses
                     }
                 },
                 y: {
                     title: {
                         display: true,
-                        text: 'Rendimento Acumulado (R$)'
+                        text: 'Rendimento Acumulado (R$)',
+                        color: '#333', // Cor do título do eixo y
+                        font: {
+                            family: 'Arial',
+                            size: 14,
+                            weight: 'bold',
+                        },
                     },
-                    beginAtZero: true
+                    beginAtZero: true,
+                    ticks: {
+                        color: '#666', // Cor dos rótulos do eixo y
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'top',
+                    labels: {
+                        color: '#444', // Cor da legenda
+                        font: {
+                            size: 12
+                        }
+                    }
+                },
+                tooltip: {
+                    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+                    titleColor: '#fff',
+                    bodyColor: '#fff',
+                    borderColor: 'rgba(0, 0, 0, 0.3)',
+                    borderWidth: 1,
+                    padding: 10,
                 }
             }
         }
