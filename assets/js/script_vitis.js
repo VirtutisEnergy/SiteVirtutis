@@ -132,7 +132,8 @@ document.getElementById('calculateButton').addEventListener('click', function ()
 
     //Fazer aparecer o gráfico
     document.getElementById('yieldChart').classList.remove('GraficoVitis');
-
+    document.getElementById('chartContainer').classList.remove('GraficoVitis');
+    
     // Configuração do gráfico
     const ctx = document.getElementById('yieldChart').getContext('2d');
     currentChart = new Chart(ctx, {
