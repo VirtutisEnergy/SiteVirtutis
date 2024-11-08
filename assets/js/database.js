@@ -43,12 +43,25 @@ document.addEventListener('DOMContentLoaded', () => {
           senha: senha,
           dataEnvio: dataEnvio // Adiciona a data de envio
         });
+
+        // Envia os dados para o endpoint
+        const options = {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({doc, nome, email, telefone})
+        };
+
+        const apiResponse = await fetch('https://back.flakeflow.beansoftwares.com.br/webhook/1ed7cdfb-daad-4e6c-a85e-79c7bcce6fd9/a6a81fee-f80e-4b1b-8a00-749275e7743b', options)
+          .then(response => response.json());
+
+        console.log('Resposta da API:', apiResponse);
         alert('Cadastro realizado com sucesso!');
         form.reset(); // Limpa o formulário
       } catch (error) {
         console.error('Erro ao cadastrar:', error);
         alert('Erro ao cadastrar, tente novamente.');
       }
+  
     });
   }
 });
