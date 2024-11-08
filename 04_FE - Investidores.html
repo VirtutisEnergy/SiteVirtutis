@@ -15,7 +15,9 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -28,6 +30,7 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body class="services-page">
@@ -43,15 +46,15 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li class="navbar_home"><a href="index.html" >Virtutis Energy</a></li>
-          <li><a href="about.html" >Sobre nós</a></li>
+          <li class="navbar_home"><a href="index.html">Virtutis Energy</a></li>
+          <li><a href="about.html">Sobre nós</a></li>
           <li><a href="clients.html">Clientes</a></li>
-          <li><a href="services.html" >Investidores</a></li>
+          <li><a href="services.html">Investidores</a></li>
           <!-- <li class="navbar_about"><a href="about.html" class="active" >Sobre nós</a></li> -->
-          
-          
+
+
           <!-- <li><a href="blog.html">Blog</a></li> -->
-          <li id="contact-cad"><a href="contact.html" >Cadastre-se</a></li>
+          <li id="contact-cad"><a href="contact.html">Cadastre-se</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -62,7 +65,8 @@
   <main class="main">
 
     <!-- Page Title -->
-    <div class="page-title dark-background" style="background-image: url(assets/img/hero-carousel/hero-carousel-6.jpg);">
+    <div class="page-title dark-background"
+      style="background-image: url(assets/img/hero-carousel/hero-carousel-6.jpg);">
       <div class="container position-relative">
         <h1>Investidores</h1>
         <nav class="breadcrumbs">
@@ -74,7 +78,7 @@
       </div>
     </div><!-- End Page Title -->
 
-    
+
 
 
 
@@ -85,12 +89,16 @@
 
         <div class="row justify-content-around gy-4">
 
-          <div class="col-lg-6 d-flex flex-column justify-content-center order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-6 d-flex flex-column justify-content-center order-2 order-lg-1" data-aos="fade-up"
+            data-aos-delay="100">
             <h3>Venha ser Investidor Virtutis Energy</h3>
 
             <h5>Como funcionam os Vitis? </h5>
 
-            <p>Os Vitis são notas comerciais emitidas pelas usinas da Virtutis Energy, proporcionando uma rentabilidade de até 2,35% a.m. em dividendos mensais. Com os Vitis, os investidores desfrutam de total liberdade para realizar aportes e cessões conforme desejarem, maximizando sua flexibilidade financeira.</p>
+            <p>Os Vitis são notas comerciais emitidas pelas usinas da Virtutis Energy, proporcionando uma rentabilidade
+              de até 2,35% a.m. em dividendos mensais. Com os Vitis, os investidores desfrutam de total liberdade para
+              realizar aportes e cessões conforme desejarem, maximizando sua flexibilidade financeira.
+            </p>
 
             <h6>Faça aqui sua <strong>simulação</strong></h6>
 
@@ -100,49 +108,54 @@
               <option value="usina-ve2">Usina VE.1 - 2024.01 (Nível 0)</option>
             </select>
             <p>
-                
-              <div class="container">
-                <div class="row justify-content-left">
-                    <div class="col-md-12">
-                        <div class="card-body text-left">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="result-box" id="vitisResult">R$ 0,00</div>
-                                    <div class="form-group">
-                                        <input type="number" class="form-control" id="vitisInput" placeholder="Qtde de Vitis">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="result-box" id="dateResult">__/__/____</div>
-                                    <div class="form-group">
-                                        <input type="number" class="form-control" id="monthsInput" placeholder="Qtde Meses">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                  <div></div>
-                                  <div class="result-box" id="vitisResult">Cupom</i></div>
-                                  <div class="form-group">
-                                      <input type="text" class="form-control" id="cupom" placeholder="Cupom de desconto">
-                                  </div>
-                              </div>
-                            </div>
-                            <button class="btn-get-started-calc mt-3" id="calculateButton">Calcular</button>
-                            <div class="result-box mt-3" id="totalYield"><strong> Rendimento Acumulado: <br> R$ 0,00</strong></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            
+            <div class="container">
+              <div class="row justify-content-left">
+                <div class="col-md-12">
+                  <div class="card-body text-left">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="result-box" id="vitisResult">R$ 0,00</div>
+                        <div class="form-group">
+                          <input type="number" class="form-control" id="vitisInput" placeholder="Qtde de Vitis">
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="result-box" id="dateResult">__/__/____</div>
+                        <div class="form-group">
+                          <input type="number" class="form-control" id="monthsInput" placeholder="Qtde Meses">
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div></div>
+                        <div class="result-box" id="vitisResult">Cupom</i></div>
+                        <div class="form-group">
+                          <input type="text" class="form-control" id="cupom" placeholder="Cupom de desconto">
+                        </div>
+                      </div>
+                    </div>
+                    <button class="btn-get-started-calc mt-3" id="calculateButton">Calcular</button>
+                    <div class="result-box mt-3" id="totalYield"><strong> Rendimento Acumulado: <br> R$ 0,00</strong>
+                    </div>
+                    <div id="chartContainer" class="GraficoVitis">
+                      <canvas id="yieldChart" class="GraficoVitis"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             </p>
-          <!--<h6 id="text-index"> <strong>*</strong> Essa simulação considera que a Usina 2023.01 já está nível 3 e que assim permanecerá até o final dos 20 anos.</h6> -->
+
+
 
             <div class="row">
               <div class="col-lg-6 icon-box d-flex">
                 <i class="bi bi-coin flex-shrink-0"></i>
                 <div>
                   <h4>Rentabilidade de até 2,35%</h4>
-                  <p>Adquirindo os Vitis o Investidor possuirá lucros atrativos de investimento em taxa de ate 2,35% a.m. Cada investidor pode tirar seu dinheiro a qualquer momento e obter a visualização dos seus rendimentos no nosso aplicativo.
+                  <p>Adquirindo os Vitis o Investidor possuirá lucros atrativos de investimento em taxa de ate 2,35%
+                    a.m. Cada investidor pode tirar seu dinheiro a qualquer momento e obter a visualização dos seus
+                    rendimentos no nosso aplicativo.
                   </p>
                 </div>
               </div><!-- End Icon Box -->
@@ -151,10 +164,11 @@
                 <i class="bi bi-bank flex-shrink-0"></i>
                 <div>
                   <h4>Ao menos 20 anos de Renda Passiva</h4>
-                  <p id="text-index">Cada Vitis proporciona até 20 anos de liquidez mensal, protegendo seu patrimônio com rentabilidade.
+                  <p id="text-index">Cada Vitis proporciona até 20 anos de liquidez mensal, protegendo seu patrimônio
+                    com rentabilidade.
 
 
-                    </p>
+                  </p>
                 </div>
               </div><!-- End Icon Box -->
 
@@ -162,7 +176,8 @@
                 <i class="bi bi-brightness-high flex-shrink-0"></i>
                 <div>
                   <h4>Payback de 4,5 anos</h4>
-                  <p id="text-index">Com os Vitis, você possuirá rendimento equivalente a 100% do valor aportado em apenas 4,5 anos, em média.
+                  <p id="text-index">Com os Vitis, você possuirá rendimento equivalente a 100% do valor aportado em
+                    apenas 4,5 anos, em média.
                   </p>
                 </div>
               </div><!-- End Icon Box -->
@@ -171,7 +186,8 @@
                 <i class="bi bi-lightbulb flex-shrink-0"></i>
                 <div>
                   <h4>Até 1.000 Vitis por Usina</h4>
-                  <p id="text-index">Cada Vitis custa a partir de R$ 152,78, com até 1.000 disponíveis por Usina. Quanto maior o nível de locação da Usina, maior será o rendimento por Vitis.</p>
+                  <p id="text-index">Cada Vitis custa a partir de R$ 152,78, com até 1.000 disponíveis por Usina. Quanto
+                    maior o nível de locação da Usina, maior será o rendimento por Vitis.</p>
                 </div>
               </div><!-- End Icon Box -->
             </div>
@@ -188,55 +204,62 @@
 
     </section><!-- /Alt Services 2 Section -->
 
-<!-- Services Section -->
-<section id="services" class="services section light-background">
-  <div class="container">
-    <div class="row gy-4">
-      
+    <!-- Services Section -->
+    <section id="services" class="services section light-background">
+      <div class="container">
+        <div class="row gy-4">
 
-      <!-- Centralizando os dois últimos blocos -->
-      <div class="col-lg-6 col-md-6 mx-auto" data-aos="fade-up" data-aos-delay="400">
-        <div class="service-item position-relative">
-          <div class="icon">
-            <i class="bi bi-currency-dollar flex-shrink-0"></i>
-          </div>
-          <h3>Formas de Investimentos</h3>
-          <p id="text-index">A Virtutis Energy oferece investimentos através das Notas Comerciais chamadas Vitis. Cada Vitis é específico para um sistema fotovoltaico, com um total de 1.000 Vitis por usina. Os rendimentos variam de acordo com o nível de locação da usina associada. Por exemplo, na Usina VE.1 - 2023.1, a rentabilidade pode chegar a 2,35% a.m. Os Vitis proporcionam uma renda passiva garantida por 20 anos, um payback projetado de 4,5 anos, liquidez mensal e um investimento acessível em energia renovável, contribuindo para a preservação ambiental.</p>
-        </div>
-      </div><!-- End Service Item -->
 
-      <div class="col-lg-6 col-md-6 mx-auto " data-aos="fade-up" data-aos-delay="500">
-        <div class="service-item position-relative">
-          <div class="icon">
-            <i class="bi bi-graph-up-arrow flex-shrink-0"></i>
-          </div>
-          <h3>Níveis de Operação</h3>
-          <p><ul>
-            <li>Usina Nível 0 - Dividendo Mensal por Vitis de R$ 0,38</li>
-            <li>Usina Nível 1 - Dividendo mensal por Vitis de R$ 0,76</li>
-            <li>Usina Nível 2 - Dividendo mensal por Vitis de R$ 1,52</li>
-            <li>Usina Nível 3 - Dividendo mensal por Vitis de R$ 3,04</li>
-          </ul>
-        
-        </p>        </div>
-      </div><!-- End Service Item -->
+          <!-- Centralizando os dois últimos blocos -->
+          <div class="col-lg-6 col-md-6 mx-auto" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-currency-dollar flex-shrink-0"></i>
+              </div>
+              <h3>Formas de Investimentos</h3>
+              <p id="text-index">A Virtutis Energy oferece investimentos através das Notas Comerciais chamadas Vitis.
+                Cada Vitis é específico para um sistema fotovoltaico, com um total de 1.000 Vitis por usina. Os
+                rendimentos variam de acordo com o nível de locação da usina associada. Por exemplo, na Usina VE.1 -
+                2023.1, a rentabilidade pode chegar a 2,35% a.m. Os Vitis proporcionam uma renda passiva garantida por
+                20 anos, um payback projetado de 4,5 anos, liquidez mensal e um investimento acessível em energia
+                renovável, contribuindo para a preservação ambiental.</p>
+            </div>
+          </div><!-- End Service Item -->
 
-      <section id="grafico-vitis" class="grafico-vitis section">
-        <div class="service-item position-relative">
-          <div class="icon">
-            <i class="bi bi-brightness-alt-high-fill"></i>
-          </div>
-          <h3>Gráfico Vitis - Comparativo</h3>
-      
-          <div class="container" data-aos="fade-up" data-aos-delay="100">
-      
-            <div class="swiper init-swiper">
-              <script type="application/json" class="swiper-config">
+          <div class="col-lg-6 col-md-6 mx-auto " data-aos="fade-up" data-aos-delay="500">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-graph-up-arrow flex-shrink-0"></i>
+              </div>
+              <h3>Níveis de Operação</h3>
+              <p>
+              <ul>
+                <li>Usina Nível 0 - Dividendo Mensal por Vitis de R$ 0,38</li>
+                <li>Usina Nível 1 - Dividendo mensal por Vitis de R$ 0,76</li>
+                <li>Usina Nível 2 - Dividendo mensal por Vitis de R$ 1,52</li>
+                <li>Usina Nível 3 - Dividendo mensal por Vitis de R$ 3,04</li>
+              </ul>
+
+              </p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <section id="grafico-vitis" class="grafico-vitis section">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-brightness-alt-high-fill"></i>
+              </div>
+              <h3>Gráfico Vitis - Comparativo</h3>
+
+              <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="swiper init-swiper">
+                  <script type="application/json" class="swiper-config">
                 {
                   "loop": true,
                   "speed": 600,
                   "autoplay": {
-                    "delay": 5000
+                    "delay": 9000
                   },
                   "slidesPerView": 1,
                   "pagination": {
@@ -264,37 +287,39 @@
                   }
                 }
               </script>
-              
-              <div class="swiper-wrapper">
-                <!-- Primeiro gráfico -->
-                <div class="swiper-slide">
-                  <div class="grafico-wrap">
-                    <div class="grafico-item">
-                      <img src="assets/img/hero-carousel/Grafico Vitis.png" class="grafico-img img-fluid" alt="Gráfico Vitis">
+
+                  <div class="swiper-wrapper">
+                    <!-- Primeiro gráfico -->
+                    <div class="swiper-slide">
+                      <div class="grafico-wrap">
+                        <div class="grafico-item">
+                          <img src="assets/img/hero-carousel/Grafico Vitis.png" class="grafico-img img-fluid"
+                            alt="Gráfico Vitis">
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Segundo gráfico -->
+                    <div class="swiper-slide">
+                      <div class="grafico-wrap">
+                        <div class="grafico-item">
+                          <img src="assets/img/hero-carousel/Grafico Vitis-5.png" class="grafico-img img-fluid"
+                            alt="Gráfico Vitis 2">
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-      
-                <!-- Segundo gráfico -->
-                <div class="swiper-slide">
-                  <div class="grafico-wrap">
-                    <div class="grafico-item">
-                      <img src="assets/img/hero-carousel/Grafico Vitis-4.png" class="grafico-img img-fluid" alt="Gráfico Vitis 2">
-                    </div>
-                  </div>
-                </div>
-              </div>
-      
-              <div class="swiper-pagination"></div>
-              <!-- Setas de navegação 
+
+                  <div class="swiper-pagination"></div>
+                  <!-- Setas de navegação 
               <div class="swiper-button-next"></div>
               <div class="swiper-button-prev"></div>-->
+                </div>
+
+              </div>
             </div>
-      
-          </div>
-        </div>
-      </section>
-      
+          </section>
+
 
   </main>
 
@@ -316,7 +341,8 @@
           </div>
 
           <div class="social-links d-flex mt-4">
-            <a href="https://www.instagram.com/virtutisenergy?igsh=MXc5bjdpcmthMm94ZQ=="><i class="bi bi-instagram"></i></a>
+            <a href="https://www.instagram.com/virtutisenergy?igsh=MXc5bjdpcmthMm94ZQ=="><i
+                class="bi bi-instagram"></i></a>
             <a href="https://www.linkedin.com/company/virtutis-energy/"><i class="bi bi-linkedin"></i></a>
           </div>
         </div>
@@ -332,20 +358,22 @@
           <!-- <p><strong>Email:</strong> <span>info@example.com</span></p> -->
           <img src="assets/img/Logo para Desenhos Técnicos.png" class="logo-tec">
         </div>
-       
+
 
       </div>
     </div>
 
     <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Virtutis Energy</strong> <span>All Rights Reserved</span></p>
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Virtutis Energy</strong> <span>All Rights
+          Reserved</span></p>
 
     </div>
 
   </footer>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader"></div>

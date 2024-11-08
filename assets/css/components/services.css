@@ -1,0 +1,346 @@
+@import url(../main.css);
+
+/*--------------------------------------------------------------
+# Services Section
+--------------------------------------------------------------*/
+.services .service-item {
+    background-color: var(--surface-color);
+    padding: 40px;
+    box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
+    height: 100%;
+}
+
+.services .service-item .icon {
+    width: 48px;
+    height: 48px;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.services .service-item .icon i {
+    color: var(--heading-color);
+    font-size: 56px;
+    transition: ease-in-out 0.3s;
+    z-index: 2;
+    position: relative;
+}
+
+/*.services .service-item .icon:before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    background: color-mix(in srgb, var(--heading-color), transparent 95%);
+    border-radius: 50px;
+    z-index: 1;
+    top: 10px;
+    right: -20px;
+    transition: 0.3s;
+  }*/
+
+.services .service-item h3 {
+    color: color-mix(in srgb, var(--heading-color), transparent 20%);
+    font-weight: 700;
+    margin: 0 0 20px 0;
+    padding-bottom: 8px;
+    font-size: 22px;
+    position: relative;
+    display: inline-block;
+    border-bottom: 4px solid color-mix(in srgb, var(--heading-color), transparent 90%);
+    transition: 0.3s;
+}
+
+.services .service-item p {
+    line-height: 24px;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.services .service-item .readmore {
+    margin-top: 15px;
+    display: inline-block;
+    color: color-mix(in srgb, var(--default-color), transparent 30%);
+}
+
+.services .service-item:hover .icon i {
+    color: var(--heading-color);
+}
+
+/*.services .service-item:hover .icon:before {
+    background: var(--accent-color);
+  }*/
+
+.services .service-item:hover h3 {
+    border-color: var(--accent-color);
+    color: var(--heading-color);
+}
+
+.services .service-item:hover .readmore {
+    color: var(--accent-color);
+}
+
+.usina {
+    width: 60%;
+}
+
+.vitis-grafic {
+    object-fit: cover;
+    background-color: red;
+}
+
+.GraficoVitis {
+    display: none;
+}
+
+
+
+@media (max-width: 767.5px) {
+    .usina {
+        width: 100%;
+    }
+}
+
+
+/*--------------------------------------------------------------
+# Alt Services Section
+--------------------------------------------------------------*/
+.alt-services .features-image {
+    position: relative;
+    min-height: 400px;
+}
+
+.alt-services .features-image img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.alt-services h3 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.alt-services h3:after {
+    content: "";
+    background: var(--accent-color);
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 3px;
+    left: 0;
+    bottom: 0;
+}
+
+.alt-services .icon-box {
+    margin-top: 50px;
+}
+
+.alt-services .icon-box i {
+    color: var(--accent-color);
+    background-color: var(--surface-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 25px;
+    font-size: 28px;
+    width: 56px;
+    height: 56px;
+    border-radius: 4px;
+    line-height: 0;
+    box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.alt-services .icon-box:hover i {
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+}
+
+.alt-services .icon-box h4 {
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.alt-services .icon-box h4 a {
+    color: var(--heading-color);
+    transition: 0.3s;
+}
+
+.alt-services .icon-box h4 a:hover {
+    color: var(--accent-color);
+}
+
+.alt-services .icon-box p {
+    line-height: 24px;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #000;
+    /* Cor das setas */
+}
+
+.grafico-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    /* Adiciona um espaço ao redor de cada gráfico */
+}
+
+.grafico-img {
+    max-width: 100%;
+    /* Garante que as imagens não ultrapassem o tamanho do contêiner */
+    height: auto;
+    /* Mantém a proporção da imagem */
+}
+
+/* Estilos gerais para o contêiner do gráfico */
+#chartContainer {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    height: 400px; /* Altura padrão */
+}
+
+#yieldChart {
+    width: 100% ;
+    height: 100% ;
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+    #chartContainer {
+        height: 500px;
+    }
+}
+
+@media (max-width: 480px) {
+    #chartContainer {
+        height: 250px;
+    }
+}
+
+
+/*--------------------------------------------------------------
+# Alt Services 2 Section
+--------------------------------------------------------------*/
+.alt-services-2 .features-image {
+    position: relative;
+    min-height: 400px;
+}
+
+.alt-services-2 .features-image img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.alt-services-2 h3 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.alt-services-2 .icon-box {
+    margin-top: 30px;
+}
+
+.alt-services-2 .icon-box i {
+    color: var(--accent-color);
+    margin-right: 15px;
+    font-size: 24px;
+    line-height: 1.2;
+}
+
+.alt-services-2 .icon-box h4 {
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.alt-services-2 .icon-box p {
+    line-height: 24px;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# Service Details Section
+--------------------------------------------------------------*/
+.service-details .services-list {
+    background-color: var(--surface-color);
+    padding: 10px 30px;
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+    margin-bottom: 20px;
+}
+
+.service-details .services-list a {
+    display: block;
+    line-height: 1;
+    padding: 8px 0 8px 15px;
+    border-left: 3px solid color-mix(in srgb, var(--default-color), transparent 70%);
+    margin: 20px 0;
+    color: color-mix(in srgb, var(--default-color), transparent 20%);
+    transition: 0.3s;
+}
+
+.service-details .services-list a.active {
+    color: var(--heading-color);
+    font-weight: 700;
+    border-color: var(--accent-color);
+}
+
+.service-details .services-list a:hover {
+    border-color: var(--accent-color);
+}
+
+.service-details .services-img {
+    margin-bottom: 20px;
+}
+
+.service-details h3 {
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.service-details h4 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.service-details p {
+    font-size: 15px;
+}
+
+.service-details ul {
+    list-style: none;
+    padding: 0;
+    font-size: 15px;
+}
+
+.service-details ul li {
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+}
+
+.service-details ul i {
+    font-size: 20px;
+    margin-right: 8px;
+    color: var(--accent-color);
+}
