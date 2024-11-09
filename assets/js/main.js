@@ -183,7 +183,7 @@
 })();
 
 document.getElementById("btn-acoount").onclick = function () {
-  window.location.href = "contact.html";
+  window.location.href = "05_Fe - TrabalheConosco.html";
 };
 
 getElementById('info-btn').addEventListener('')
