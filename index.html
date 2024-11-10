@@ -15,7 +15,9 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -32,55 +34,59 @@
 
 <body class="index-page">
 
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+  <header id="navbar-placeholder">
+    <!-- Navbar placeholder -->
+    <!-- Código na página principal logo após importar o navbar -->
+    <script>
+      async function loadNavbar() {
+        const response = await fetch('assets/pages/navBar.html');
+        const navbarHtml = await response.text();
+        document.getElementById('navbar-placeholder').innerHTML = navbarHtml;
 
-      <a href="index.html" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="assets/img/logo.png" alt="Virtutis" style="scale: 1.5;">
-        <!-- <h1 class="sitename">UpConstruction</h1> <span>.</span> -->
-      </a>
+        // Inicializa o JavaScript da navbar após o carregamento
+        initNavbarJS();
+      }
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="02_FE - SobreNós.html" >Sobre nós</a></li>
-          <li><a href="03_FE - Clientes.html">Clientes</a></li>
-          <li><a href="04_FE - Investidores.html" >Investidores</a></li>
-          <!-- <li class="navbar_about"><a href="about.html" class="active" >Sobre nós</a></li> -->
-          
-          
-          <!-- <li><a href="blog.html">Blog</a></li> -->
-          <li id="contact-cad"><a href="05_FE - Cadastro.html" >Cadastre-se</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
+      function initNavbarJS() {
+        const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
+        if (mobileNavToggleBtn) {
+          mobileNavToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('mobile-nav-active');
+            mobileNavToggleBtn.classList.toggle('bi-list');
+            mobileNavToggleBtn.classList.toggle('bi-x');
+          });
+        }
+      }
 
-    </div>
+      // Chama o carregamento da navbar
+      loadNavbar();
+    </script>
   </header>
-
   <main class="main">
 
-  <!-- Hero Section -->
-<section id="hero" class="hero section dark-background">
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
 
-  <div class="info d-flex align-items-center">
-    <div class="container">
-      <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
-        <div class="col-lg-6 text-center">
-          <h2><strong id="name-hero">Virtutis Energy</strong></h2>
-          <h3 class="subtext">Gerando a Melhor Energia!</h3>
-          <p id="invisible-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="btn-get-started" id="btn-acoount">Abra sua conta</button>
+      <div class="info d-flex align-items-center">
+        <div class="container">
+          <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-6 text-center">
+              <h2><strong id="name-hero">Virtutis Energy</strong></h2>
+              <h3 class="subtext">Gerando a Melhor Energia!</h3>
+              <p id="invisible-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <button class="btn-get-started" id="btn-acoount">Abra sua conta</button>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
 
-  <div class="hero-image">
-    <img src="assets/img/hero-carousel/ft1.jpg" alt="Hero Image" class="img-fluid">
-  </div>
+      <div class="hero-image">
+        <img src="assets/img/hero-carousel/ft1.jpg" alt="Hero Image" class="img-fluid">
+      </div>
 
-</section><!-- /Hero Section -->
+    </section><!-- /Hero Section -->
 
     <!-- Get Started Section -->
     <section id="get-started" class="get-started section">
@@ -92,7 +98,9 @@
           <div class="sobre col-lg-12 d-flex align-items-center " data-aos="zoom-out" data-aos-delay="100">
             <div class="content ">
               <h3>Sobre a Virtutis Energy</h3>
-              <p id="text-index" class="fs-6">A Virtutis Energy é uma fintech de energia que desenvolve e gerencia usinas fotovoltaicas de microgeração distribuída, proporcionando - a partir de sua locação, redução dos custos com eletricidade a seus clientes e retorno financeiro mensal a seus investidores.
+              <p id="text-index" class="fs-6">A Virtutis Energy é uma fintech de energia que desenvolve e gerencia
+                usinas fotovoltaicas de microgeração distribuída, proporcionando - a partir de sua locação, redução dos
+                custos com eletricidade a seus clientes e retorno financeiro mensal a seus investidores.
               </p>
             </div>
           </div>
@@ -100,9 +108,12 @@
           <div class="col-lg-6 d-flex align-items-center " data-aos="zoom-out" data-aos-delay="100">
             <div class="content ">
               <h3>Abra sua conta</h3>
-              <p id="text-index">Se você está interessado em reduzir seus custos com eletricidade ou investir em energia renovável, a Virtutis Energy é a escolha certa. Queremos conhecê-lo melhor e ajudá-lo a aproveitar nossas soluções inovadoras. Preencha o formulário com seus dados e nossa equipe entrará em contato com você para discutir como podemos atender às suas necessidades. 
+              <p id="text-index">Se você está interessado em reduzir seus custos com eletricidade ou investir em energia
+                renovável, a Virtutis Energy é a escolha certa. Queremos conhecê-lo melhor e ajudá-lo a aproveitar
+                nossas soluções inovadoras. Preencha o formulário com seus dados e nossa equipe entrará em contato com
+                você para discutir como podemos atender às suas necessidades.
               </p>
-                <p >Ao fazer o cadastro, o usuário terá acesso a nossas propostas de locação e investimento em usinas. </p>
+              <p>Ao fazer o cadastro, o usuário terá acesso a nossas propostas de locação e investimento em usinas. </p>
             </div>
           </div>
 
@@ -112,11 +123,13 @@
               <div class="row gy-3 mt-2">
 
                 <div class="col-12">
-                  <input type="text" name="doc" class="form-control" placeholder="CPF/CNPJ" required oninput="this.value = this.value.replace(/[^0-9/\.\+\-\s]/g, '')">
+                  <input type="text" name="doc" class="form-control" placeholder="CPF/CNPJ" required
+                    oninput="this.value = this.value.replace(/[^0-9/\.\+\-\s]/g, '')">
                 </div>
 
                 <div class="col-12">
-                  <input type="text" name="nome" class="form-control" placeholder="Nome" required oninput="this.value = this.value.replace(/[^A-Za-zÀ-ÿ\s]/g, '')">
+                  <input type="text" name="nome" class="form-control" placeholder="Nome" required
+                    oninput="this.value = this.value.replace(/[^A-Za-zÀ-ÿ\s]/g, '')">
 
                 </div>
 
@@ -125,10 +138,11 @@
                 </div>
 
                 <div class="col-12 mb-3">
-                  <input type="text" name="telefone" class="form-control" placeholder="Telefone" required oninput="this.value = this.value.replace(/[^0-9+\-\s]/g, '')">
+                  <input type="text" name="telefone" class="form-control" placeholder="Telefone" required
+                    oninput="this.value = this.value.replace(/[^0-9+\-\s]/g, '')">
                 </div>
 
-                
+
 
                 <div class="col-12 text-center">
 
@@ -154,13 +168,15 @@
 
         <ul class="nav nav-tabs row  g-2 d-flex" data-aos="fade-up" data-aos-delay="100" role="tablist">
           <li class="nav-item col-6" role="presentation">
-            <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#features-tab-1" aria-selected="true" role="tab">
+            <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#features-tab-1" aria-selected="true"
+              role="tab">
               <h4>Cliente</h4>
             </a><!-- End tab nav item -->
           </li>
-        
+
           <li class="nav-item col-6" role="presentation">
-            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-2" aria-selected="false" tabindex="-1" role="tab">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-2" aria-selected="false"
+              tabindex="-1" role="tab">
               <h4>Investidor</h4>
             </a>
           </li><!-- End tab nav item -->
@@ -173,9 +189,15 @@
               <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
                 <h3>Economia para o Cliente</h3>
                 <p class="" id="text-index">
-                  A <strong>Virtutis Energy</strong> é uma fintech de energia solar que desenvolve, gerencia e aluga usinas fotovoltaicas próprias. Oferecemos redução de custos com energia elétrica para nossos clientes, sem a necessidade de que eles paguem pela construção e manutenção de placas solares. Além disso, proporcionamos aos investidores a oportunidade de participar do desenvolvimento dos sistemas de geração de energia, oferecendo-lhes participação nos lucros oriundos da locação das usinas.
+                  A <strong>Virtutis Energy</strong> é uma fintech de energia solar que desenvolve, gerencia e aluga
+                  usinas fotovoltaicas próprias. Oferecemos redução de custos com energia elétrica para nossos clientes,
+                  sem a necessidade de que eles paguem pela construção e manutenção de placas solares. Além disso,
+                  proporcionamos aos investidores a oportunidade de participar do desenvolvimento dos sistemas de
+                  geração de energia, oferecendo-lhes participação nos lucros oriundos da locação das usinas.
                 </p>
-                <p id="text-index">Com a <strong>Virtutis Energy</strong>, você aproveita uma solução sustentável que combina economia, rentabilidade e impacto positivo no meio ambiente. Junte-se a nós e faça parte do futuro da energia renovável!</p>
+                <p id="text-index">Com a <strong>Virtutis Energy</strong>, você aproveita uma solução sustentável que
+                  combina economia, rentabilidade e impacto positivo no meio ambiente. Junte-se a nós e faça parte do
+                  futuro da energia renovável!</p>
                 <div class="info"><a href="03_FE - Clientes.html" class="btn-get-started">Saiba mais</a></div>
               </div>
               <div class="col-lg-6 order-1 order-lg-2 text-center mb-4">
@@ -183,13 +205,15 @@
               </div>
             </div>
           </div><!-- End tab content item -->
-        
+
           <div class="tab-pane fade" id="features-tab-2" role="tabpanel">
             <div class="row content">
               <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
                 <h3>Turbine seus Investimentos</h3>
                 <p class="" id="text-index">
-                  Invista em nossas usinas fotovoltaicas e desfrute de uma rentabilidade de até 2,35% ao mês. Com a <strong>Virtutis Energy</strong>, você garante economia e rentabilidade em um só lugar. Potencialize seus investimentos e faça parte do futuro da energia renovável!
+                  Invista em nossas usinas fotovoltaicas e desfrute de uma rentabilidade de até 2,35% ao mês. Com a
+                  <strong>Virtutis Energy</strong>, você garante economia e rentabilidade em um só lugar. Potencialize
+                  seus investimentos e faça parte do futuro da energia renovável!
                 </p>
                 <div class="info"> <a href="04_FE - Investidores.html" class="btn-get-started">Saiba mais</a></div>
               </div>
@@ -198,33 +222,36 @@
               </div>
             </div>
           </div><!-- End tab content item -->
-        
+
         </div>
-        
+
 
       </div>
 
     </section><!-- /Features Section -->
 
-   
+
 
   </main>
+  <footer>
+    <div id="footer"></div>
 
-  <div id="footer"></div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("/assets/pages/footer.html")
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById("footer").innerHTML = data;
+          })
+          .catch(error => console.log("Erro ao carregar o footer:", error));
+      });
+    </script>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      fetch("/assets/pages/footer.html")
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById("footer").innerHTML = data;
-        })
-        .catch(error => console.log("Erro ao carregar o footer:", error));
-    });
-  </script>
+  </footer>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader"></div>
@@ -242,10 +269,9 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
   <script src="assets/js/database.js" type="module"></script>
-  <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-</script>
-  <script src="/assets/js/send_email.js" type="module" ></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+  <script src="/assets/js/send_email.js" type="module"></script>
 </body>
 
 </html>

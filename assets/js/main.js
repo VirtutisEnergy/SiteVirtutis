@@ -25,6 +25,7 @@
   /**
    * Mobile nav toggle
    */
+  // Mobile nav toggle
   const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
 
   function mobileNavToogle() {
@@ -32,8 +33,11 @@
     mobileNavToggleBtn.classList.toggle('bi-list');
     mobileNavToggleBtn.classList.toggle('bi-x');
   }
-  mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
 
+  // Verifica se o botão existe antes de adicionar o evento
+  if (mobileNavToggleBtn) {
+    mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
+  }
   /**
    * Hide mobile nav on same-page/hash links
    */
@@ -61,6 +65,7 @@
   /**
    * Preloader
    */
+  // Preloader
   const preloader = document.querySelector('#preloader');
   if (preloader) {
     window.addEventListener('load', () => {

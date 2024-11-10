@@ -15,7 +15,9 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -32,37 +34,40 @@
 
 <body class="contact-page">
 
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+  <header id="navbar-placeholder">
+    <!-- Navbar placeholder -->
+    <!-- Código na página principal logo após importar o navbar -->
+    <script>
+      async function loadNavbar() {
+        const response = await fetch('assets/pages/navBar.html');
+        const navbarHtml = await response.text();
+        document.getElementById('navbar-placeholder').innerHTML = navbarHtml;
 
-      <a href="index.html" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="assets/img/logo.png" alt="Virtutis" style="scale: 1.5;">
-        <!-- <h1 class="sitename">UpConstruction</h1> <span>.</span> -->
-      </a>
+        // Inicializa o JavaScript da navbar após o carregamento
+        initNavbarJS();
+      }
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li class="navbar_home"><a href="index.html">Virtutis Energy</a></li>
-          <li><a href="02_FE - SobreNós.html">Sobre nós</a></li>
-          <li><a href="03_FE - Clientes.html">Clientes</a></li>
-          <li><a href="04_FE - Investidores.html">Investidores</a></li>
-          <!-- <li class="navbar_about"><a href="about.html" class="active" >Sobre nós</a></li> -->
+      function initNavbarJS() {
+        const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
+        if (mobileNavToggleBtn) {
+          mobileNavToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('mobile-nav-active');
+            mobileNavToggleBtn.classList.toggle('bi-list');
+            mobileNavToggleBtn.classList.toggle('bi-x');
+          });
+        }
+      }
 
-
-          <!-- <li><a href="blog.html">Blog</a></li> -->
-          <li id="contact-cad"><a href="05_FE - Cadastro.html">Cadastre-se</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
-    </div>
+      // Chama o carregamento da navbar
+      loadNavbar();
+    </script>
   </header>
 
   <main class="main">
 
     <!-- Page Title -->
-    <div class="page-title dark-background" style="background-image: url(assets/img/hero-carousel/hero-carousel-5.jpg);">
+    <div class="page-title dark-background"
+      style="background-image: url(assets/img/hero-carousel/hero-carousel-5.jpg);">
       <div class="container position-relative">
         <h1>Trabalhe conosco</h1>
         <nav class="breadcrumbs">
@@ -82,7 +87,8 @@
         <div class="row gy-4">
 
           <div class="col-lg-6">
-            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
+            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up"
+              data-aos-delay="200">
               <i class="bi bi-geo-alt"></i>
               <h3>Endereço</h3>
               <p>Av. Humberto Monte s/n, Fortaleza, CE</p>
@@ -90,15 +96,18 @@
           </div><!-- End Info Item -->
 
           <div class="col-lg-3 col-md-6">
-            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="300">
-              <a class="logo_zap" href="https://api.whatsapp.com/send?phone=558582351512"><i class="bi bi-whatsapp"></i></a>
+            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up"
+              data-aos-delay="300">
+              <a class="logo_zap" href="https://api.whatsapp.com/send?phone=558582351512"><i
+                  class="bi bi-whatsapp"></i></a>
               <h3>WhatsApp</h3>
               <p>+55 85 98235 1512</p>
             </div>
           </div><!-- End Info Item -->
 
           <div class="col-lg-3 col-md-6">
-            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="400">
+            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up"
+              data-aos-delay="400">
               <i class="bi bi-envelope"></i>
               <h3>Email</h3>
               <p>dr.gr@virtutisenergy.com</p>
@@ -109,10 +118,13 @@
 
         <div class="row gy-4 mt-1">
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.3189424919906!2d-38.572065625497466!3d-3.7405181432329178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c74b9a30e7eacd%3A0xebd1f33eefe87b1!2sBloco%20334%20-%20CEI%20-%20Condom%C3%ADnio%20de%20Empreendedorismo%20e%20Inova%C3%A7%C3%A3o!5e0!3m2!1sen!2sbr!4v1720744362409!5m2!1sen!2sbr" frameborder="0" style="border:0; width: 100%; height: 400px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.3189424919906!2d-38.572065625497466!3d-3.7405181432329178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c74b9a30e7eacd%3A0xebd1f33eefe87b1!2sBloco%20334%20-%20CEI%20-%20Condom%C3%ADnio%20de%20Empreendedorismo%20e%20Inova%C3%A7%C3%A3o!5e0!3m2!1sen!2sbr!4v1720744362409!5m2!1sen!2sbr"
+              frameborder="0" style="border:0; width: 100%; height: 400px;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div><!-- End Google Maps -->
 
-        
+
 
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
             <form action="https://api.sheetmonkey.io/form/5NCULvYAt5qK9tajopHwgR" method="post" class="php-email-form">
@@ -120,12 +132,14 @@
               <div class="row gy-3">
 
                 <div class="col-12">
-                  <input type="text" name="doc" class="form-control" placeholder="CPF/CNPJ" required oninput="this.value = this.value.replace(/[^0-9/\.\+\-\s]/g, '')">
+                  <input type="text" name="doc" class="form-control" placeholder="CPF/CNPJ" required
+                    oninput="this.value = this.value.replace(/[^0-9/\.\+\-\s]/g, '')">
                 </div>
 
 
                 <div class="col-12">
-                  <input type="text" name="nome" class="form-control" placeholder="Nome" required oninput="this.value = this.value.replace(/[^A-Za-zÀ-ÿ\s]/g, '')">
+                  <input type="text" name="nome" class="form-control" placeholder="Nome" required
+                    oninput="this.value = this.value.replace(/[^A-Za-zÀ-ÿ\s]/g, '')">
                 </div>
 
                 <div class="col-12 ">
@@ -133,7 +147,8 @@
                 </div>
 
                 <div class="col-12">
-                  <input type="text" name="doc" class="form-control" placeholder="Telefone" required oninput="this.value = this.value.replace(/[^0-9+\-\s]/g, '')">
+                  <input type="text" name="doc" class="form-control" placeholder="Telefone" required
+                    oninput="this.value = this.value.replace(/[^0-9+\-\s]/g, '')">
                 </div>
 
                 <div class="col-12">
@@ -141,7 +156,7 @@
                 </div>
 
                 <a href="07_FE - Subdivisões.html" class="setor-link">Saiba mais sobre nossa organização interna.</a>
-                
+
                 <div class="col-12 text-center">
                   <button type="submit" value="submit">Cadastrar-se</button>
                 </div>
@@ -158,21 +173,24 @@
 
   </main>
 
-  <div id="footer"></div>
+  <footer>
+    <div id="footer"></div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      fetch("/assets/pages/footer.html")
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById("footer").innerHTML = data;
-        })
-        .catch(error => console.log("Erro ao carregar o footer:", error));
-    });
-  </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("/assets/pages/footer.html")
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById("footer").innerHTML = data;
+          })
+          .catch(error => console.log("Erro ao carregar o footer:", error));
+      });
+    </script>
+  </footer>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader"></div>

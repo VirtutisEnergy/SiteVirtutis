@@ -15,7 +15,9 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -32,37 +34,40 @@
 
 <body class="services-page">
 
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+  <header id="navbar-placeholder">
+    <!-- Navbar placeholder -->
+    <!-- Código na página principal logo após importar o navbar -->
+    <script>
+      async function loadNavbar() {
+        const response = await fetch('assets/pages/navBar.html');
+        const navbarHtml = await response.text();
+        document.getElementById('navbar-placeholder').innerHTML = navbarHtml;
 
-      <a href="index.html" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="assets/img/logo.png" alt="Virtutis" style="scale: 1.5;">
-        <!-- <h1 class="sitename">UpConstruction</h1> <span>.</span> -->
-      </a>
+        // Inicializa o JavaScript da navbar após o carregamento
+        initNavbarJS();
+      }
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li class="navbar_home"><a href="index.html" >Virtutis Energy</a></li>
-          <li><a href="02_FE - SobreNós.html" >Sobre nós</a></li>
-          <li><a href="03_FE - Clientes.html">Clientes</a></li>
-          <li><a href="04_FE - Investidores.html" >Investidores</a></li>
-          <!-- <li class="navbar_about"><a href="about.html" class="active" >Sobre nós</a></li> -->
-          
-          
-          <!-- <li><a href="blog.html">Blog</a></li> -->
-          <li id="contact-cad"><a href="05_FE - Cadastro.html" >Cadastre-se</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
+      function initNavbarJS() {
+        const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
+        if (mobileNavToggleBtn) {
+          mobileNavToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('mobile-nav-active');
+            mobileNavToggleBtn.classList.toggle('bi-list');
+            mobileNavToggleBtn.classList.toggle('bi-x');
+          });
+        }
+      }
 
-    </div>
+      // Chama o carregamento da navbar
+      loadNavbar();
+    </script>
   </header>
 
   <main class="main">
 
     <!-- Page Title -->
-    <div class="page-title dark-background" style="background-image: url(assets/img/hero-carousel/hero-carousel-1.jpg);">
+    <div class="page-title dark-background"
+      style="background-image: url(assets/img/hero-carousel/hero-carousel-1.jpg);">
       <div class="container position-relative">
         <h1>Clientes</h1>
         <nav class="breadcrumbs">
@@ -74,7 +79,7 @@
       </div>
     </div><!-- End Page Title -->
 
-    
+
 
 
 
@@ -85,22 +90,23 @@
 
         <div class="row justify-content-around gy-4">
 
-          <div class="col-lg-6 d-flex flex-column justify-content-center order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-6 d-flex flex-column justify-content-center order-2 order-lg-1" data-aos="fade-up"
+            data-aos-delay="100">
             <h3>Qual o valor médio que você costuma pagar em sua conta de energia?</h3>
             <p>
-              <div class="row justify-content-center mt-4">
-                <div class="col-md-8 d-flex align-items-center">
-                  <form id="investmentCalculator" class="form-inline w-100">
-                    <div class="input-group w-100 content bill">
-                      <input type="text" class="form-control" id="monthlyBill" placeholder="Digite o valor da conta">
-                      <div class="input-group-append ml-2 info">
-                        <button type="button" class="btn-get-started" onclick="calculateSavings()">Calcular</button>
-                      </div>
+            <div class="row justify-content-center mt-4">
+              <div class="col-md-8 d-flex align-items-center">
+                <form id="investmentCalculator" class="form-inline w-100">
+                  <div class="input-group w-100 content bill">
+                    <input type="text" class="form-control" id="monthlyBill" placeholder="Digite o valor da conta">
+                    <div class="input-group-append ml-2 info">
+                      <button type="button" class="btn-get-started" onclick="calculateSavings()">Calcular</button>
                     </div>
-                    <div id="result" class="ml-3"></div>
-                  </form>
-                </div>
+                  </div>
+                  <div id="result" class="ml-3"></div>
+                </form>
               </div>
+            </div>
             </p>
 
             <div class="row">
@@ -109,7 +115,8 @@
                 <i class="bi bi-coin flex-shrink-0"></i>
                 <div>
                   <h4>Redução dos gastos</h4>
-                  <p>Redução dos gastos com Energia Elétrica, a partir da contabilização de créditos de energia gerados pela usina alugada.</p>
+                  <p>Redução dos gastos com Energia Elétrica, a partir da contabilização de créditos de energia gerados
+                    pela usina alugada.</p>
                 </div>
               </div><!-- End Icon Box -->
 
@@ -117,7 +124,8 @@
                 <i class="bi bi-bank flex-shrink-0"></i>
                 <div>
                   <h4>Sem Burocracia</h4>
-                  <p>Nenhuma burocracia na construção de usinas próprias, toda a construção e jurisdição é responsabilidade da <strong>Virtutis Energy</strong>.</p>
+                  <p>Nenhuma burocracia na construção de usinas próprias, toda a construção e jurisdição é
+                    responsabilidade da <strong>Virtutis Energy</strong>.</p>
                 </div>
               </div><!-- End Icon Box -->
 
@@ -125,7 +133,8 @@
                 <i class="bi bi-brightness-high flex-shrink-0"></i>
                 <div>
                   <h4>Aluguel de Espaços</h4>
-                  <p>Explore locais alugados para implementar sistemas de geração de energia renovável, promovendo sustentabilidade e eficiência.</p>
+                  <p>Explore locais alugados para implementar sistemas de geração de energia renovável, promovendo
+                    sustentabilidade e eficiência.</p>
                 </div>
               </div><!-- End Icon Box -->
 
@@ -133,7 +142,8 @@
                 <i class="bi bi-lightbulb flex-shrink-0"></i>
                 <div>
                   <h4>Oportunidades em Locais Ideais</h4>
-                  <p>Descubra oportunidades em locais estratégicos alugados para construção de usinas, impulsionando a produção energética sustentável.</p>
+                  <p>Descubra oportunidades em locais estratégicos alugados para construção de usinas, impulsionando a
+                    produção energética sustentável.</p>
                 </div>
               </div><!-- End Icon Box -->
 
@@ -151,89 +161,100 @@
 
     </section><!-- /Alt Services 2 Section -->
 
-<!-- Services Section -->
-<section id="services" class="services section light-background">
-  <div class="container">
-    <div class="row gy-4">
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-        <div class="service-item position-relative">
-          <div class="icon">
-            <i class="fa-solid fa-coins"></i>
-          </div>
-          <h3>Economia de até 30%</h3>
-          <p id="text-index">Ao optar pelas nossas usinas fotovoltaicas, você pode reduzir seus gastos com energia elétrica em até 30%, obtendo assim vantagens no uso da nossa energia solar.</p>
-        </div>
-      </div><!-- End Service Item -->
+    <!-- Services Section -->
+    <section id="services" class="services section light-background">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="fa-solid fa-coins"></i>
+              </div>
+              <h3>Economia de até 30%</h3>
+              <p id="text-index">Ao optar pelas nossas usinas fotovoltaicas, você pode reduzir seus gastos com energia
+                elétrica em até 30%, obtendo assim vantagens no uso da nossa energia solar.</p>
+            </div>
+          </div><!-- End Service Item -->
 
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-        <div class="service-item position-relative">
-          <div class="icon">
-            <i class="fa-solid fa-file-signature"></i>
-          </div>
-          <h3>Contratação Online</h3>
-          <p id="text-index">Interessados em ser Clientes e Investidores precisam acessar o nosso <strong><a href="contact.html">formulário</a></strong> e assim, fazer o seu cadastro. O Nosso Setor Comercial entrará em contato para proceder com todo o funcionamento da usina e aquisição de Vitis.</p>
-        </div>
-      </div><!-- End Service Item -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="fa-solid fa-file-signature"></i>
+              </div>
+              <h3>Contratação Online</h3>
+              <p id="text-index">Interessados em ser Clientes e Investidores precisam acessar o nosso <strong><a
+                    href="contact.html">formulário</a></strong> e assim, fazer o seu cadastro. O Nosso Setor Comercial
+                entrará em contato para proceder com todo o funcionamento da usina e aquisição de Vitis.</p>
+            </div>
+          </div><!-- End Service Item -->
 
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-        <div class="service-item position-relative">
-          <div class="icon">
-            <i class="fa-solid fa-helmet-safety"></i>
-          </div>
-          <h3>Sem Obras</h3>
-          <p id="text-index">Com a Virtutis Energy, garantimos a tranquilidade sem preocupações com obras ou instalações elétricas. Nossa Usina Fotovoltaica oferece condições ideais para investidores e clientes, atendendo a diversas demandas de energia com eficiência.</p>
-        </div>
-      </div><!-- End Service Item -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="fa-solid fa-helmet-safety"></i>
+              </div>
+              <h3>Sem Obras</h3>
+              <p id="text-index">Com a Virtutis Energy, garantimos a tranquilidade sem preocupações com obras ou
+                instalações elétricas. Nossa Usina Fotovoltaica oferece condições ideais para investidores e clientes,
+                atendendo a diversas demandas de energia com eficiência.</p>
+            </div>
+          </div><!-- End Service Item -->
 
-      <!-- Centralizando os dois últimos blocos -->
-      <div class="col-lg-6 col-md-6 mx-auto d-flex justify-content-center" data-aos="fade-up" data-aos-delay="400">
-        <div class="service-item position-relative">
-          <div class="icon">
-            <i class="fa-solid fa-handshake-slash"></i>
-          </div>
-          <h3>Sem Fidelização</h3>
-          <p id="text-index">Oferecemos liberdade total aos investidores da Virtutis Energy. Você pode retirar seu investimento nos Vitis a qualquer momento, sem a necessidade de esperar os 20 anos. Ao investir, você recebe bonificações, porém ao realizar a retirada, as bonificações são canceladas.</p>
-        </div>
-      </div><!-- End Service Item -->
+          <!-- Centralizando os dois últimos blocos -->
+          <div class="col-lg-6 col-md-6 mx-auto d-flex justify-content-center" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="fa-solid fa-handshake-slash"></i>
+              </div>
+              <h3>Sem Fidelização</h3>
+              <p id="text-index">Oferecemos liberdade total aos investidores da Virtutis Energy. Você pode retirar seu
+                investimento nos Vitis a qualquer momento, sem a necessidade de esperar os 20 anos. Ao investir, você
+                recebe bonificações, porém ao realizar a retirada, as bonificações são canceladas.</p>
+            </div>
+          </div><!-- End Service Item -->
 
-      <div class="col-lg-6 col-md-6 mx-auto d-flex justify-content-center" data-aos="fade-up" data-aos-delay="500">
-        <div class="service-item position-relative">
-          <div class="icon">
-            <i class="fa-solid fa-gift"></i>
-          </div>
-          <h3>Primeira mensalidade GRÁTIS</h3>
-          <p id="text-index">Garantimos aos nossos clientes uma <strong>primeira mensalidade gratuita</strong>, sendo assim uma oportunidade perfeita para conhecer melhor nossos produtos e serviços.</p>
-        </div>
-      </div><!-- End Service Item -->
+          <div class="col-lg-6 col-md-6 mx-auto d-flex justify-content-center" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="fa-solid fa-gift"></i>
+              </div>
+              <h3>Primeira mensalidade GRÁTIS</h3>
+              <p id="text-index">Garantimos aos nossos clientes uma <strong>primeira mensalidade gratuita</strong>,
+                sendo assim uma oportunidade perfeita para conhecer melhor nossos produtos e serviços.</p>
+            </div>
+          </div><!-- End Service Item -->
 
-    </div><!-- End row -->
-    
-  </div><!-- End container -->
-  <br>
-  <div class="d-flex justify-content-center "data-aos="fade-up" data-aos-delay="100">
-    <a href="05_FE - Cadastro.html" class="btn-kind">Abra sua conta</a>
-  </div>
-</section><!-- /Services Section -->
+        </div><!-- End row -->
+
+      </div><!-- End container -->
+      <br>
+      <div class="d-flex justify-content-center " data-aos="fade-up" data-aos-delay="100">
+        <a href="05_FE - Cadastro.html" class="btn-kind">Abra sua conta</a>
+      </div>
+    </section><!-- /Services Section -->
 
 
 
 
   </main>
+  <footer>
+    <div id="footer"></div>
 
-  <div id="footer"></div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("/assets/pages/footer.html")
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById("footer").innerHTML = data;
+          })
+          .catch(error => console.log("Erro ao carregar o footer:", error));
+      });
+    </script>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      fetch("/assets/pages/footer.html")
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById("footer").innerHTML = data;
-        })
-        .catch(error => console.log("Erro ao carregar o footer:", error));
-    });
-  </script>
+  </footer>
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader"></div>

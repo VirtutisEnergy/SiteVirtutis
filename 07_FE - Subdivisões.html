@@ -15,7 +15,9 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -32,164 +34,176 @@
 
 <body class="departments-page">
 
-    <header id="header" class="header header-02 d-flex align-items-center fixed-top">
-      <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-  
-        <a href="index.html" class="logo d-flex align-items-center">
-          <!-- Uncomment the line below if you also wish to use an image logo -->
-          <img src="assets/img/logo.png" alt="Virtutis" style="scale: 1.5;">
-          <!-- <h1 class="sitename">UpConstruction</h1> <span>.</span> -->
-        </a>
-  
-        <nav id="navmenu" class="navmenu">
-          <ul>
-            <li class="navbar_home"><a href="index.html" >Virtutis Energy</a></li>
-            <li><a href="about.html" >Sobre nós</a></li>
-            <li><a href="clients.html">Clientes</a></li>
-            <li><a href="services.html" >Investidores</a></li>
-            <!-- <li class="navbar_about"><a href="about.html" class="active" >Sobre nós</a></li> -->
-            
-            
-            <!-- <li><a href="blog.html">Blog</a></li> -->
-            <li id="contact-cad"><a href="contact.html" >Cadastre-se</a></li>
-          </ul>
-          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-        </nav>
-  
-      </div>
-    </header>
-  
-    <main class="main main-02">
-  
-      <!-- Contact Section -->
-      <section id="contact" class="contact section">
-  
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-  
-          <div class="row gy-4 justify-content-center">
-  
-            <div class="col-lg-6 col-md-6">
-              <div class="info-item d-flex flex-column justify-content-center align-items-center px-5 text-center" data-aos="fade-up" data-aos-delay="200">
-                <i class="bi bi-person-fill-gear"></i>
-                <h3>Setor Administrativo</h3>
-                <p>Designado a gerenciar a empresa, por
-                    meio do controle de frequência e
-                    produtividade dos colaboradores nas
-                    secretarias, setores e departamentos. Área que comanda a gestão do
-                    empreendimento, conduzindo reuniões
-                    e coordenando eventos, conforme seu Co planejamento estratégico.</p>
-              </div>
-            </div><!-- End Info Item -->
-  
-            <div class="col-lg-6 col-md-6">
-                <div class="info-item d-flex flex-column justify-content-center align-items-center px-5 text-center" data-aos="fade-up" data-aos-delay="200">
-                  <i class="bi bi-file-earmark-text-fill"></i>
-                  <h3>Setor Jurídico</h3>
-                  <p>Responsável pela elaboração de
-                    contratos e pelo acompanhamento da
-                    regulamentação voltada para o
-                    mercado de geração de energia.
-                    Setor que verifica acordos, processos,
-                    declarações e registros, contribuindo
-                    com a prevenção de riscos,
-                    em conformidade com a Lei.</p>
-                </div>
-              </div><!-- End Info Item -->
-  
-              <div class="col-lg-6 col-md-6">
-                <div class="info-item d-flex flex-column justify-content-center align-items-center px-5 text-center" data-aos="fade-up" data-aos-delay="200">
-                  <i class="bi bi-building-gear"></i>
-                  <h3>Setor Estrutural</h3>
-                  <p>Trabalhando para desenvolver a
-                    estrutura física e colaborativa da
-                    empresa, dedica-se à aquisição de
-                    equipamentos, à realização de
-                    parcerias, à capacitação profissional
-                    e à participação em incubações,
-                    beneficiando a Virtutis Energy e seus
-                    colaboradores.</p>
-                </div>
-              </div><!-- End Info Item -->
+  <header id="navbar-placeholder">
+    <!-- Navbar placeholder -->
+    <!-- Código na página principal logo após importar o navbar -->
+    <script>
+      async function loadNavbar() {
+        const response = await fetch('assets/pages/navBar.html');
+        const navbarHtml = await response.text();
+        document.getElementById('navbar-placeholder').innerHTML = navbarHtml;
 
-              <div class="col-lg-6 col-md-6">
-                <div class="info-item d-flex flex-column justify-content-center align-items-center px-5 text-center" data-aos="fade-up" data-aos-delay="200">
-                  <i class="bi bi-cpu-fill"></i>
-                  <h3>Setor Tecnológico</h3>
-                  <p>Encarregado por garantir fluxo de
-                    informação e otimizar processos de
-                    automatização da empresa, coleta,
-                    gerencia e direciona dados de
-                    maneira eficiente e segura, por meio
-                    de site e aplicativo, posicionando a
-                    Virtutis Energy no mercado como
-                    Fintech de Energia</p>
-                </div>
-              </div><!-- End Info Item -->
+        // Inicializa o JavaScript da navbar após o carregamento
+        initNavbarJS();
+      }
 
-              <div class="col-lg-6 col-md-6">
-                <div class="info-item d-flex flex-column justify-content-center align-items-center px-5 text-center" data-aos="fade-up" data-aos-delay="200">
-                  <i class="bi bi-coin"></i>
-                  <h3>Setor Comercial</h3>
-                  <p>Responsável pela comunicação
-                    da empresa no mercado,
-                    conduz o relacionamento com
-                    clientes e investidores, organiza
-                    ações de marketing e divulga
-                    inovações e atualizações
-                    desenvolvidas pela Virtutis Energy,
-                    para gerar a melhor energia!</p>
-                </div>
-              </div><!-- End Info Item -->
+      function initNavbarJS() {
+        const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
+        if (mobileNavToggleBtn) {
+          mobileNavToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('mobile-nav-active');
+            mobileNavToggleBtn.classList.toggle('bi-list');
+            mobileNavToggleBtn.classList.toggle('bi-x');
+          });
+        }
+      }
 
-              <div class="col-lg-12 col-md-12">
-                <div class="d-flex flex-column justify-content-center align-items-center px-5 text-center" data-aos="fade-up" data-aos-delay="5">
-                  <a href="venha-ser-virtutis.html" class="back">Voltar para cadastro</i></a>
-                </div>
-              </div><!-- End Info Item -->
-  
-          </div>
-  
-          </div>
-  
+      // Chama o carregamento da navbar
+      loadNavbar();
+    </script>
+  </header>
+
+  <main class="main main-02">
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4 justify-content-center">
+
+          <div class="col-lg-6 col-md-6">
+            <div class="info-item d-flex flex-column justify-content-center align-items-center px-5 text-center"
+              data-aos="fade-up" data-aos-delay="200">
+              <i class="bi bi-person-fill-gear"></i>
+              <h3>Setor Administrativo</h3>
+              <p>Designado a gerenciar a empresa, por
+                meio do controle de frequência e
+                produtividade dos colaboradores nas
+                secretarias, setores e departamentos. Área que comanda a gestão do
+                empreendimento, conduzindo reuniões
+                e coordenando eventos, conforme seu Co planejamento estratégico.</p>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-lg-6 col-md-6">
+            <div class="info-item d-flex flex-column justify-content-center align-items-center px-5 text-center"
+              data-aos="fade-up" data-aos-delay="200">
+              <i class="bi bi-file-earmark-text-fill"></i>
+              <h3>Setor Jurídico</h3>
+              <p>Responsável pela elaboração de
+                contratos e pelo acompanhamento da
+                regulamentação voltada para o
+                mercado de geração de energia.
+                Setor que verifica acordos, processos,
+                declarações e registros, contribuindo
+                com a prevenção de riscos,
+                em conformidade com a Lei.</p>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-lg-6 col-md-6">
+            <div class="info-item d-flex flex-column justify-content-center align-items-center px-5 text-center"
+              data-aos="fade-up" data-aos-delay="200">
+              <i class="bi bi-building-gear"></i>
+              <h3>Setor Estrutural</h3>
+              <p>Trabalhando para desenvolver a
+                estrutura física e colaborativa da
+                empresa, dedica-se à aquisição de
+                equipamentos, à realização de
+                parcerias, à capacitação profissional
+                e à participação em incubações,
+                beneficiando a Virtutis Energy e seus
+                colaboradores.</p>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-lg-6 col-md-6">
+            <div class="info-item d-flex flex-column justify-content-center align-items-center px-5 text-center"
+              data-aos="fade-up" data-aos-delay="200">
+              <i class="bi bi-cpu-fill"></i>
+              <h3>Setor Tecnológico</h3>
+              <p>Encarregado por garantir fluxo de
+                informação e otimizar processos de
+                automatização da empresa, coleta,
+                gerencia e direciona dados de
+                maneira eficiente e segura, por meio
+                de site e aplicativo, posicionando a
+                Virtutis Energy no mercado como
+                Fintech de Energia</p>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-lg-6 col-md-6">
+            <div class="info-item d-flex flex-column justify-content-center align-items-center px-5 text-center"
+              data-aos="fade-up" data-aos-delay="200">
+              <i class="bi bi-coin"></i>
+              <h3>Setor Comercial</h3>
+              <p>Responsável pela comunicação
+                da empresa no mercado,
+                conduz o relacionamento com
+                clientes e investidores, organiza
+                ações de marketing e divulga
+                inovações e atualizações
+                desenvolvidas pela Virtutis Energy,
+                para gerar a melhor energia!</p>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-lg-12 col-md-12">
+            <div class="d-flex flex-column justify-content-center align-items-center px-5 text-center"
+              data-aos="fade-up" data-aos-delay="5">
+              <a href="venha-ser-virtutis.html" class="back">Voltar para cadastro</i></a>
+            </div>
+          </div><!-- End Info Item -->
+
         </div>
-  
-      </section><!-- /Contact Section -->
-  
-    </main>
-  
+
+      </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer>
     <div id="footer"></div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      fetch("/assets/pages/footer.html")
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById("footer").innerHTML = data;
-        })
-        .catch(error => console.log("Erro ao carregar o footer:", error));
-    });
-  </script>
-  
-    <!-- Scroll Top -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("/assets/pages/footer.html")
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById("footer").innerHTML = data;
+          })
+          .catch(error => console.log("Erro ao carregar o footer:", error));
+      });
+    </script>
+  </footer>
 
-    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-  
-    <!-- Preloader -->
-    <div id="preloader"></div>
-  
-    <!-- Vendor JS Files -->
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
-    <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  
-    <!-- Main JS File -->
-    <script src="assets/js/main.js"></script>
-  
-  
-  
-  </body>
+
+  <!-- Scroll Top -->
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+
+
+</body>

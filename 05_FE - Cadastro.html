@@ -37,31 +37,33 @@
 
 <body class="contact-page">
 
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+  <header id="navbar-placeholder">
+    <!-- Navbar placeholder -->
+    <!-- Código na página principal logo após importar o navbar -->
+    <script>
+      async function loadNavbar() {
+        const response = await fetch('assets/pages/navBar.html');
+        const navbarHtml = await response.text();
+        document.getElementById('navbar-placeholder').innerHTML = navbarHtml;
 
-      <a href="index.html" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="assets/img/logo.png" alt="Virtutis" style="scale: 1.5;">
-        <!-- <h1 class="sitename">UpConstruction</h1> <span>.</span> -->
-      </a>
+        // Inicializa o JavaScript da navbar após o carregamento
+        initNavbarJS();
+      }
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li class="navbar_home"><a href="index.html">Virtutis Energy</a></li>
-          <li><a href="02_FE - SobreNós.html">Sobre nós</a></li>
-          <li><a href="03_FE - Clientes.html">Clientes</a></li>
-          <li><a href="04_FE - Investidores.html">Investidores</a></li>
-          <!-- <li class="navbar_about"><a href="about.html" class="active" >Sobre nós</a></li> -->
+      function initNavbarJS() {
+        const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
+        if (mobileNavToggleBtn) {
+          mobileNavToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('mobile-nav-active');
+            mobileNavToggleBtn.classList.toggle('bi-list');
+            mobileNavToggleBtn.classList.toggle('bi-x');
+          });
+        }
+      }
 
-
-          <!-- <li><a href="blog.html">Blog</a></li> -->
-          <li id="contact-cad"><a href="05_FE - Cadastro.html">Cadastre-se</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
-    </div>
+      // Chama o carregamento da navbar
+      loadNavbar();
+    </script>
   </header>
 
   <main class="main">
@@ -167,19 +169,21 @@
     </section><!-- /Contact Section -->
 
   </main>
+  <footer>
+    <div id="footer"></div>
 
-  <div id="footer"></div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("/assets/pages/footer.html")
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById("footer").innerHTML = data;
+          })
+          .catch(error => console.log("Erro ao carregar o footer:", error));
+      });
+    </script>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      fetch("/assets/pages/footer.html")
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById("footer").innerHTML = data;
-        })
-        .catch(error => console.log("Erro ao carregar o footer:", error));
-    });
-  </script>
+  </footer>
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
