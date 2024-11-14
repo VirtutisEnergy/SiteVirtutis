@@ -187,8 +187,4 @@
 
 })();
 
-document.getElementById("btn-acoount").onclick = function () {
-  window.location.href = "05_FE - Cadastro.html";
-};
-
 getElementById('info-btn').addEventListener('')
