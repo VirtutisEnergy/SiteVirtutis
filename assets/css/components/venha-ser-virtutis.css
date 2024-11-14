@@ -125,3 +125,18 @@
   /* Permite clicar na imagem abaixo */
 }
 
+.titulo-subdivisoes {
+  text-align: center;
+  margin:100px 0 50px 0;
+}
+
+.titulo-subdivisoes-01 {
+  text-align: center;
+  margin-bottom:50px;
+}
+
+
+.divisor {
+  opacity: 0.1; /* Define a transparência em 10% */
+  border-top: 1px solid rgba(0, 0, 0, 0.1); /* Define a espessura e cor */
+}
