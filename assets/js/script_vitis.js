@@ -116,7 +116,7 @@ document.getElementById('calculateButton').addEventListener('click', function ()
 
         bonificacaoAcumulada += rendimentoMensal;
         yieldData.push(bonificacaoAcumulada.toFixed(2));
-        monthLabels.push(`${month}/${year}`);
+        monthLabels.push(`Mês ${i + 1}`);
     }
 
     if (vitisSelect.value === 'usina-ve1') {
