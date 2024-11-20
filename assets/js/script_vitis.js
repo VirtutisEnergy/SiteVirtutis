@@ -71,7 +71,7 @@ document.getElementById('cupom').addEventListener('input', updateVitisResult);
 
 
 // Variáveis globais
-let currentChart; // Armazena o gráfico atual
+let currentChart = null; // Armazena o gráfico atual
 
 // Função para criar o gráfico
 function createChart(labels, data, title) {
@@ -156,22 +156,40 @@ function createChart(labels, data, title) {
 
 // Função para gerar o gráfico de exemplo
 function generateExampleChart() {
-    const exampleMonths = 50;
-    const exampleVitis = 10;
-    const exampleYieldBase = 0.37;
-    let exampleBonification = 0;
-    const exampleYieldData = [];
-    const exampleLabels = [];
+    const vitisValue = 10; // Valor fixo de vitis no exemplo
+    const monthsValue = 50; // 50 meses
+    const finalRendimento = 1720.80; // Rendimento final desejado
+    const rendimentoMensal = finalRendimento / monthsValue; // Rendimento fixo mensal
+    const yieldData = [];
+    const monthLabels = [];
+    let bonificacaoAcumulada = 0;
 
-    for (let i = 0; i < exampleMonths; i++) {
-        exampleBonification += exampleYieldBase * exampleVitis;
-        exampleYieldData.push(exampleBonification.toFixed(2));
-        exampleLabels.push(`Mês ${i + 1}`);
+    // Calcula o rendimento mês a mês, somando o valor mensal fixo
+    for (let i = 0; i < monthsValue; i++) {
+        const futureDate = new Date();
+        futureDate.setMonth(futureDate.getMonth() + i + 1);
+        const year = futureDate.getFullYear();
+        const month = futureDate.getMonth() + 1;
+
+        // Acrescenta o valor fixo mensal ao rendimento acumulado
+        bonificacaoAcumulada += rendimentoMensal;
+        
+        // Adiciona o valor acumulado e o mês ao gráfico
+        yieldData.push(bonificacaoAcumulada.toFixed(2));
+        monthLabels.push(`Mês ${i + 1}`);
     }
-    document.getElementById('totalYield').innerHTML = `Rendimento Acumulado:<br>R$ ${exampleBonification.toFixed(2).replace('.', ',')}<br>(Usina 3 - Exemplo)`;
 
-    createChart(exampleLabels, exampleYieldData, 'Rendimento (Usina 3) com 10 Vitis');
+    // Atualiza o valor do rendimento acumulado no totalYield
+    document.getElementById('totalYield').innerHTML = `
+        Rendimento Acumulado:<br>
+        R$ ${bonificacaoAcumulada.toFixed(2).replace('.', ',')}<br>
+        (Usina 3 - Exemplo)
+    `;
+
+    // Cria o gráfico de exemplo
+    createChart(monthLabels, yieldData, 'Rendimento Exemplo (50 meses)');
 }
+
 
 // Evento ao carregar a página
 window.addEventListener('load', generateExampleChart);
@@ -183,6 +201,7 @@ document.getElementById('calculateButton').addEventListener('click', function ()
     const vitisSelect = document.getElementById('usina');
     const currentDate = new Date();
 
+    // Verifica se os valores inseridos são válidos
     if (isNaN(vitisValue) || isNaN(monthsValue) || vitisValue <= 0 || monthsValue <= 0) {
         alert('Por favor, insira valores válidos para Vitis e Meses.');
         return;
@@ -193,21 +212,93 @@ document.getElementById('calculateButton').addEventListener('click', function ()
     }
 
     let bonificacaoAcumulada = 0;
-    const yieldData = [];
-    const monthLabels = [];
+    const yieldBase = 0.37; // Base Yield
+    const yieldData = [];   // Para armazenar o rendimento acumulado de cada mês
+    const monthLabels = [];  // Para armazenar os rótulos dos meses
 
+    // Calcula o rendimento para os meses selecionados
     for (let i = 0; i < monthsValue; i++) {
-        bonificacaoAcumulada += 0.37 * vitisValue; // Calcular rendimento
+        const futureDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + i + 1, currentDate.getDate());
+        const year = futureDate.getFullYear();
+        const month = futureDate.getMonth() + 1;
+
+        const ipcaEntry = ipcaData.find(data => data.year === year);
+        const baseYield = ipcaEntry ? ipcaEntry.baseYield : 0;
+
+        let rendimentoMensal;
+        if (vitisSelect.value === 'usina-ve1') {
+            if (year == 2024 && month < 8) {
+                rendimentoMensal = yieldBase * vitisValue;
+            } else {
+                rendimentoMensal = baseYield * vitisValue * Math.pow(2, 3); // Nível 3 a partir de agosto de 2024 para todos os anos
+            }
+        } else if (vitisSelect.value === 'usina-ve2') {
+            if (year == 2024 && month < 8) {
+                rendimentoMensal = yieldBase * vitisValue;
+            } else {
+                rendimentoMensal = baseYield * vitisValue * Math.pow(2, 0); // Nível 0 até segunda ordem
+            }
+        }
+
+        bonificacaoAcumulada += rendimentoMensal;
         yieldData.push(bonificacaoAcumulada.toFixed(2));
         monthLabels.push(`Mês ${i + 1}`);
     }
 
-    const usinaNome = vitisSelect.value === 'usina-ve1' ? 'Usina VE.1' : 'Usina VE.2';
-    document.getElementById('totalYield').innerHTML = `Rendimento Acumulado:<br>R$ ${bonificacaoAcumulada.toFixed(2).replace('.', ',')}<br>(${usinaNome})`;
-    createChart(monthLabels, yieldData, 'Rendimento Acumulado (R$)');
+    // Exibe o rendimento acumulado
+    if (vitisSelect.value === 'usina-ve1') {
+        document.getElementById('totalYield').innerHTML = `Rendimento Acumulado:<br>R$ ${bonificacaoAcumulada.toFixed(2).replace('.', ',')}<br>(Usina VE.1 - 2023.01)`;
+    } else if (vitisSelect.value === 'usina-ve2') {
+        document.getElementById('totalYield').innerHTML = `Rendimento Acumulado:<br>R$ ${bonificacaoAcumulada.toFixed(2).replace('.', ',')}<br>(Usina VE.2 - 2024.01)`;
+    }
+
+    // Cria o gráfico com os novos dados
+    createChart(monthLabels, yieldData, 'Rendimento (Usina 1 ou 2)');
 });
 
+// Função para gerar o gráfico personalizado
+function generateCustomChart() {
+    const vitisValue = parseFloat(document.getElementById('vitisInput').value);
+    const monthsValue = parseInt(document.getElementById('monthsInput').value);
+    const usinaSelect = document.getElementById('usina');
 
+    if (isNaN(vitisValue) || isNaN(monthsValue) || vitisValue <= 0 || monthsValue <= 0) {
+        alert('Por favor, insira valores válidos para Vitis e Meses.');
+        return;
+    }
+
+    if (usinaSelect.value === 'default') {
+        alert('Por favor, selecione a usina a investir.');
+        return;
+    }
+
+    const yieldData = [];
+    const monthLabels = [];
+    let accumulatedYield = 0;
+
+    for (let i = 0; i < monthsValue; i++) {
+        const futureDate = new Date();
+        futureDate.setMonth(futureDate.getMonth() + i);
+        const year = futureDate.getFullYear();
+
+        const ipcaEntry = ipcaData.find(data => data.year === year);
+        const baseYield = ipcaEntry ? ipcaEntry.baseYield : 0.35;
+
+        const monthlyYield = baseYield * vitisValue;
+        accumulatedYield += monthlyYield;
+
+        yieldData.push(accumulatedYield.toFixed(2));
+        monthLabels.push(`Mês ${i + 1}`);
+    }
+
+    document.getElementById('totalYield').innerHTML = `
+        Rendimento Acumulado:<br>
+        R$ ${accumulatedYield.toFixed(2).replace('.', ',')}<br>
+        (${usinaSelect.options[usinaSelect.selectedIndex].text})
+    `;
+
+    createChart(monthLabels, yieldData, `Rendimento (${usinaSelect.options[usinaSelect.selectedIndex].text})`);
+}
 
 
 
