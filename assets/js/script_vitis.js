@@ -156,9 +156,9 @@ function createChart(labels, data, title) {
 
 // Função para gerar o gráfico de exemplo
 function generateExampleChart() {
-    const vitisValue = 10; // Valor fixo de vitis no exemplo
-    const monthsValue = 50; // 50 meses
-    const finalRendimento = 1720.80; // Rendimento final desejado
+    const vitisValue = 0; // Valor fixo de vitis no exemplo
+    const monthsValue = 0; // 50 meses
+    const finalRendimento = 0;// Rendimento final desejado
     const rendimentoMensal = finalRendimento / monthsValue; // Rendimento fixo mensal
     const yieldData = [];
     const monthLabels = [];
@@ -183,11 +183,10 @@ function generateExampleChart() {
     document.getElementById('totalYield').innerHTML = `
         Rendimento Acumulado:<br>
         R$ ${bonificacaoAcumulada.toFixed(2).replace('.', ',')}<br>
-        (Usina 3 - Exemplo)
     `;
 
     // Cria o gráfico de exemplo
-    createChart(monthLabels, yieldData, 'Rendimento Exemplo (50 meses)');
+    createChart(monthLabels, yieldData, 'Rendimento total');
 }
 
 
@@ -253,7 +252,7 @@ document.getElementById('calculateButton').addEventListener('click', function ()
     }
 
     // Cria o gráfico com os novos dados
-    createChart(monthLabels, yieldData, 'Rendimento (Usina 1 ou 2)');
+    createChart(monthLabels, yieldData, 'Rendimento total');
 });
 
 // Função para gerar o gráfico personalizado
