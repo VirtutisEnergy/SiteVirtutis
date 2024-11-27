@@ -11,13 +11,13 @@
 # Help: https://bootstrapmade.com/color-system/
 --------------------------------------------------------------*/
 /** Importando os outroas arquivos CSS */
-@import url(components/SobreNós.css);
-@import url(components/Cadastro.css);
-@import url(components/Subdivisoes.css);
+@import url(components/02_FE\ -\ SobreNós.css);
+@import url(components/05_FE\ -\ Cadastro.css);
+@import url(components/07_FE\ -\ Subdivisoes.css);
 @import url(components/index.css);
-@import url(components/PoliticaDePrivacidade.css);
-@import url(components/Investidores.css);
-@import url(components/venha-ser-virtutis.css);
+@import url(components/08_FE\ -\ PoliticaDePrivacidade.css);
+@import url(components/04_FE\ -\ Investidores.css);
+@import url(components/06_FE\ -\ TrabalheConosco.css);
 @import url(layouts/footer.css);
 @import url(layouts/header.css);
 @import url(util/navgationDesktop.css);
