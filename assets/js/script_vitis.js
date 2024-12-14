@@ -44,6 +44,10 @@ function updateVitisResult() {
         desconto = 0.8;
     }
 
+    if (cupom === 'ANIVERSARIO') {
+        desconto = 0.7;
+    }
+
     if (usinaSelect.value === 'usina-ve1') {
         exchangeRate = 183.34 * desconto; // Valor de 1 Vitis em R$ - usina ve.1 - 2023.01
     } else if (usinaSelect.value === 'usina-ve2') {
