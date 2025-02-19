@@ -4,7 +4,7 @@ const ipcaData = [
     { year: 2022, ipca: 1.0579, baseYield: 0.35 },
     { year: 2023, ipca: 1.0462, baseYield: 0.37 },
     { year: 2024, ipca: 1.05, baseYield: 0.38 },
-    { year: 2025, ipca: 1.05, baseYield: 0.4 },
+    { year: 2025, ipca: 1.05, baseYield: 0.38 },
     { year: 2026, ipca: 1.05, baseYield: 0.42 },
     { year: 2027, ipca: 1.05, baseYield: 0.44 },
     { year: 2028, ipca: 1.05, baseYield: 0.46 },
@@ -211,7 +211,7 @@ document.getElementById('calculateButton').addEventListener('click', function ()
     }
 
     let bonificacaoAcumulada = 0;
-    const yieldBase = 0.37; // Base Yield
+    const yieldBase = 0.38; // Base Yield
     const yieldData = [];   // Para armazenar o rendimento acumulado de cada mês
     const monthLabels = [];  // Para armazenar os rótulos dos meses
 
