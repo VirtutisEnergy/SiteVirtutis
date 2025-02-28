@@ -3,7 +3,7 @@ const ipcaData = [
     { year: 2021, ipca: 1.1006, baseYield: 0.31 },
     { year: 2022, ipca: 1.0579, baseYield: 0.35 },
     { year: 2023, ipca: 1.0462, baseYield: 0.37 },
-    { year: 2024, ipca: 1.05, baseYield: 0.38 },
+    { year: 2024, ipca: 1.05, baseYield: 0.40 },
     { year: 2025, ipca: 1.05, baseYield: 0.38 },
     { year: 2026, ipca: 1.05, baseYield: 0.42 },
     { year: 2027, ipca: 1.05, baseYield: 0.44 },
