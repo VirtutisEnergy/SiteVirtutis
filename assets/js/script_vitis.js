@@ -37,8 +37,25 @@ function updateVitisResult() {
     let desconto = 1;
     const vitisValue = parseFloat(document.getElementById('vitisInput').value);
     const cupom = document.getElementById('cupom').value.trim();
+    const input = document.getElementById('cupom');
     const usinaSelect = document.getElementById('usina');
     const vitisResult = document.getElementById('vitisResult');
+
+
+
+    const cuponsValidos = ['#Vitis20', '#intersolar10', '#intersolar15', '#intersolar20'];
+
+    if (cuponsValidos.includes(cupom)) {
+        input.classList.add('cupom-valid');
+        input.classList.remove('cupom-invalid');
+    } else if (cupom.length === 0) {
+        input.classList.remove('cupom-valid');
+        input.classList.remove('cupom-invalid');
+    } else {
+        input.classList.add('cupom-invalid');
+        input.classList.remove('cupom-valid');
+    }
+    
 
     if (cupom === '#Vitis20') {
         desconto = 0.8;
