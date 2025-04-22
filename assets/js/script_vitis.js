@@ -44,9 +44,21 @@ function updateVitisResult() {
         desconto = 0.8;
     }
 
-    if (cupom === 'ANIVERSARIO') {
-        desconto = 0.7;
+    if (cupom === '#intersolar10') {
+        desconto = 0.9;
     }
+
+    if (cupom === '#intersolar15') {
+        desconto = 0.85;
+    }
+
+    if (cupom === '#intersolar20') {
+        desconto = 0.80;
+    }
+
+    // if (cupom === 'ANIVERSARIO') {
+    //     desconto = 0.7;
+    // }
 
     if (usinaSelect.value === 'usina-ve1') {
         exchangeRate = 218.17 * desconto; // Valor de 1 Vitis em R$ - usina ve.1 - 2023.01
