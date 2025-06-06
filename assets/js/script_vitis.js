@@ -214,7 +214,6 @@ function generateExampleChart() {
 
     // Atualiza o valor do rendimento acumulado no totalYield
     document.getElementById('totalYield').innerHTML = `
-        Rendimento Acumulado:<br>
         R$ ${bonificacaoAcumulada.toFixed(2).replace('.', ',')}<br>
     `;
 
@@ -279,9 +278,9 @@ document.getElementById('calculateButton').addEventListener('click', function ()
 
     // Exibe o rendimento acumulado
     if (vitisSelect.value === 'usina-ve1') {
-        document.getElementById('totalYield').innerHTML = `Rendimento Acumulado:<br>R$ ${bonificacaoAcumulada.toFixed(2).replace('.', ',')}<br>(Usina VE.1 - 2023.01)`;
+        document.getElementById('totalYield').innerHTML = `R$ ${bonificacaoAcumulada.toFixed(2).replace('.', ',')}<br>(Usina VE.1 - 2023.01)`;
     } else if (vitisSelect.value === 'usina-ve2') {
-        document.getElementById('totalYield').innerHTML = `Rendimento Acumulado:<br>R$ ${bonificacaoAcumulada.toFixed(2).replace('.', ',')}<br>(Usina VE.2 - 2024.01)`;
+        document.getElementById('totalYield').innerHTML = `R$ ${bonificacaoAcumulada.toFixed(2).replace('.', ',')}<br>(Usina VE.2 - 2024.01)`;
     }
 
     // Cria o gráfico com os novos dados
