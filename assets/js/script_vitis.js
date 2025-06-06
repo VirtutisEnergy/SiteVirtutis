@@ -32,6 +32,7 @@ const ipcaData = [
 ];
 
 // Função para atualizar o valor de vitisResult dinamicamente
+let vitisConvertedResult = 0;
 function updateVitisResult() {
     let exchangeRate = 0;
     let desconto = 1;
@@ -84,7 +85,9 @@ function updateVitisResult() {
     }
 
     const result = vitisValue ? (vitisValue * exchangeRate).toFixed(2) : '0,00';
+    vitisConvertedResult = result;
     vitisResult.innerText = `R$ ${result.replace('.', ',')}`;
+
 }
 
 // Atualiza `dateResult` dinamicamente conforme o usuário digita o valor dos meses
@@ -257,22 +260,32 @@ document.getElementById('calculateButton').addEventListener('click', function ()
         const baseYield = ipcaEntry ? ipcaEntry.baseYield : 0;
 
         let rendimentoMensal;
+        let percente;
         if (vitisSelect.value === 'usina-ve1') {
             if (year == 2024 && month < 8) {
                 rendimentoMensal = yieldBase * vitisValue;
+                percente = yieldBase/vitisConvertedResult
+                percente_otimize = (percente*100).toFixed(2)
             } else {
+                percente = yieldBase/vitisConvertedResult
+                percente_otimize = (percente*100).toFixed(2)
                 rendimentoMensal = baseYield * vitisValue * Math.pow(2, 3); // Nível 3 a partir de agosto de 2024 para todos os anos
             }
         } else if (vitisSelect.value === 'usina-ve2') {
             if (year == 2024 && month < 8) {
                 rendimentoMensal = yieldBase * vitisValue;
+                percente = yieldBase/vitisConvertedResult
+                percente_otimize = (percente*100).toFixed(2)
             } else {
+                percente = yieldBase/vitisConvertedResult
+                percente_otimize = (percente*100).toFixed(2)
                 rendimentoMensal = baseYield * vitisValue * Math.pow(2, 0); // Nível 0 até segunda ordem
             }
         }
 
         bonificacaoAcumulada += rendimentoMensal;
         yieldData.push(bonificacaoAcumulada.toFixed(2));
+        document.getElementById('yieldPercentage').innerHTML = `${percente_otimize}%`;
         monthLabels.push(`Mês ${i + 1}`);
     }
 
