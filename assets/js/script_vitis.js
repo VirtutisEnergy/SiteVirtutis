@@ -264,28 +264,24 @@ document.getElementById('calculateButton').addEventListener('click', function ()
         if (vitisSelect.value === 'usina-ve1') {
             if (year == 2024 && month < 8) {
                 rendimentoMensal = yieldBase * vitisValue;
-                percente = yieldBase/vitisConvertedResult
-                percente_otimize = (percente*100).toFixed(2)
+                percente = vitisConvertedResult
             } else {
-                percente = yieldBase/vitisConvertedResult
-                percente_otimize = (percente*100).toFixed(2)
+                percente = vitisConvertedResult
                 rendimentoMensal = baseYield * vitisValue * Math.pow(2, 3); // Nível 3 a partir de agosto de 2024 para todos os anos
             }
         } else if (vitisSelect.value === 'usina-ve2') {
             if (year == 2024 && month < 8) {
                 rendimentoMensal = yieldBase * vitisValue;
-                percente = yieldBase/vitisConvertedResult
-                percente_otimize = (percente*100).toFixed(2)
+                percente = vitisConvertedResult
             } else {
-                percente = yieldBase/vitisConvertedResult
-                percente_otimize = (percente*100).toFixed(2)
+                percente = vitisConvertedResult
                 rendimentoMensal = baseYield * vitisValue * Math.pow(2, 0); // Nível 0 até segunda ordem
             }
         }
 
         bonificacaoAcumulada += rendimentoMensal;
         yieldData.push(bonificacaoAcumulada.toFixed(2));
-        document.getElementById('yieldPercentage').innerHTML = `${percente_otimize}%`;
+        document.getElementById('yieldPercentage').innerHTML = `${((parseInt(bonificacaoAcumulada)/parseInt(percente))*100).toFixed(2)}%`;
         monthLabels.push(`Mês ${i + 1}`);
     }
 
