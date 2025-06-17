@@ -32,6 +32,7 @@ const ipcaData = [
 ];
 
 // Função para atualizar o valor de vitisResult dinamicamente
+let vitisConvertedResult = 0;
 function updateVitisResult() {
     let exchangeRate = 0;
     let desconto = 1;
@@ -84,7 +85,9 @@ function updateVitisResult() {
     }
 
     const result = vitisValue ? (vitisValue * exchangeRate).toFixed(2) : '0,00';
+    vitisConvertedResult = result;
     vitisResult.innerText = `R$ ${result.replace('.', ',')}`;
+
 }
 
 // Atualiza `dateResult` dinamicamente conforme o usuário digita o valor dos meses
@@ -214,7 +217,6 @@ function generateExampleChart() {
 
     // Atualiza o valor do rendimento acumulado no totalYield
     document.getElementById('totalYield').innerHTML = `
-        Rendimento Acumulado:<br>
         R$ ${bonificacaoAcumulada.toFixed(2).replace('.', ',')}<br>
     `;
 
@@ -258,30 +260,36 @@ document.getElementById('calculateButton').addEventListener('click', function ()
         const baseYield = ipcaEntry ? ipcaEntry.baseYield : 0;
 
         let rendimentoMensal;
+        let percente;
         if (vitisSelect.value === 'usina-ve1') {
             if (year == 2024 && month < 8) {
                 rendimentoMensal = yieldBase * vitisValue;
+                percente = vitisConvertedResult
             } else {
+                percente = vitisConvertedResult
                 rendimentoMensal = baseYield * vitisValue * Math.pow(2, 3); // Nível 3 a partir de agosto de 2024 para todos os anos
             }
         } else if (vitisSelect.value === 'usina-ve2') {
             if (year == 2024 && month < 8) {
                 rendimentoMensal = yieldBase * vitisValue;
+                percente = vitisConvertedResult
             } else {
+                percente = vitisConvertedResult
                 rendimentoMensal = baseYield * vitisValue * Math.pow(2, 0); // Nível 0 até segunda ordem
             }
         }
 
         bonificacaoAcumulada += rendimentoMensal;
         yieldData.push(bonificacaoAcumulada.toFixed(2));
+        document.getElementById('yieldPercentage').innerHTML = `${((parseInt(bonificacaoAcumulada)/parseInt(percente))*100).toFixed(2)}%`;
         monthLabels.push(`Mês ${i + 1}`);
     }
 
     // Exibe o rendimento acumulado
     if (vitisSelect.value === 'usina-ve1') {
-        document.getElementById('totalYield').innerHTML = `Rendimento Acumulado:<br>R$ ${bonificacaoAcumulada.toFixed(2).replace('.', ',')}<br>(Usina VE.1 - 2023.01)`;
+        document.getElementById('totalYield').innerHTML = `R$ ${bonificacaoAcumulada.toFixed(2).replace('.', ',')}<br>(Usina VE.1 - 2023.01)`;
     } else if (vitisSelect.value === 'usina-ve2') {
-        document.getElementById('totalYield').innerHTML = `Rendimento Acumulado:<br>R$ ${bonificacaoAcumulada.toFixed(2).replace('.', ',')}<br>(Usina VE.2 - 2024.01)`;
+        document.getElementById('totalYield').innerHTML = `R$ ${bonificacaoAcumulada.toFixed(2).replace('.', ',')}<br>(Usina VE.2 - 2024.01)`;
     }
 
     // Cria o gráfico com os novos dados

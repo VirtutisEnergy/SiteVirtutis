@@ -104,49 +104,85 @@
 
             <h6>Faça aqui sua <strong>simulação</strong></h6>
 
-            <select class="usina form-select mb-3 mt-3 w-60" id="usina">
-              <option selected value="default">Selecione a usina</option>
-              <option value="usina-ve1">Usina VE.1 - 2023.01 (Nível 3)</option>
-              <option value="usina-ve2">Usina VE.1 - 2024.01 (Nível 0)</option>
-            </select>
-            <p>
+            <!-- Seleção de usina -->
+<h6>Faça aqui sua <strong>simulação</strong></h6>
 
-            <div class="container">
-              <div class="row justify-content-left">
-                <div class="col-md-12">
-                  <div class="card-body text-left">
-                    <div class="row">
-                      <div class="col-md-4">
-                        <div class="result-box" id="vitisResult">R$ 0,00</div>
-                        <div class="form-group">
-                          <input type="number" class="form-control" id="vitisInput" placeholder="Qtde de Vitis">
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="result-box" id="dateResult">__/__/____</div>
-                        <div class="form-group">
-                          <input type="number" class="form-control" id="monthsInput" placeholder="Qtde Meses">
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div></div>
-                        <div class="result-box" id="vitisResult">Cupom</i></div>
-                        <div class="form-group">
-                          <input type="text" class="form-control" id="cupom" placeholder="Cupom de desconto">
-                        </div>
-                      </div>
-                    </div>
-                    <button class="btn-get-started-calc mt-3" id="calculateButton">Calcular</button>
-                    <div class="result-box mt-3" id="totalYield"><strong> Rendimento Acumulado: <br> R$ 0,00</strong>
-                    </div>
-                    <div id="chartContainer" class="GraficoVitis">
-                      <canvas id="yieldChart" class="GraficoVitis"></canvas>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            </p>
+<select class="form-select mb-3 mt-3 w-60" id="usina">
+  <option selected value="default">Selecione a usina</option>
+  <option value="usina-ve1">Usina VE.1 - 2023.01 (Nível 3)</option>
+  <option value="usina-ve2">Usina VE.1 - 2024.01 (Nível 0)</option>
+</select>
+
+<!-- Simulador de Rentabilidade -->
+<div class="container">
+  <div class="card shadow-sm p-4">
+    <h5 class="mb-4"><i class="bi bi-calculator-fill me-2"></i>Analise de Investimento</h5>
+
+    <div class="row g-4 align-items-end">
+
+      <!-- Valor Investido -->
+      <div class="col-md-4">
+        <label class="form-label"><strong>Valor Investido</strong></label>
+        <div class="form-control bg-light" id="vitisResult">R$ 0,00</div>
+      </div>
+
+      <!-- Quantidade de Vitis -->
+      <div class="col-md-4">
+        <label for="vitisInput" class="form-label">Quantidade de Vitis</label>
+        <input type="number" class="form-control" id="vitisInput" placeholder="Ex: 1">
+      </div>
+
+      <!-- Meses -->
+      <div class="col-md-4">
+        <label for="monthsInput" class="form-label">Período (em meses)</label>
+        <input type="number" class="form-control" id="monthsInput" placeholder="Ex: 1">
+      </div>
+    </div>
+
+    <!-- Cupom -->
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <label for="cupom" class="form-label">Cupom de Desconto</label>
+        <input type="text" class="form-control" id="cupom" placeholder="Opcional">
+      </div>
+    </div>
+
+    <!-- Botão de cálculo -->
+    <div class="mt-4">
+      <button class="btn btn-primary w-100" id="calculateButton">
+        <i class="bi bi-graph-up-arrow me-2"></i>Calcular Rentabilidade
+      </button>
+    </div>
+
+    <!-- Resultados -->
+    <div class="row mt-4 text-center">
+      <div class="col-md-4">
+        <div class="result-box p-3 border rounded bg-light">
+          <strong>Total Acumulado</strong><br>
+          <span id="totalYield">R$ 0,00</span>  
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="result-box p-3 border rounded bg-light">
+          <strong>Data Final</strong><br>
+          <span id="dateResult">__/__/____</span>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="result-box p-3 border rounded bg-light">
+          <strong>Rentabilidade</strong><br>
+          <span id="yieldPercentage">0%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gráfico -->
+    <div class="mt-5" id="chartContainer">
+      <canvas id="yieldChart"></canvas>
+    </div>
+  </div>
+</div>
+
 
 
 
@@ -332,10 +368,6 @@
               </div>
             </div>
           </section>
-
-          <p style="font-size: 0.85rem; color: #6c757d; margin-top: 0.5rem;">
-  * Atualmente, a rentabilidade da Usina VE.1 - 2023.01, sem cupom de desconto ativo, é de 1,72% a.m.
-</p>
 
 
   </main>
